@@ -1,0 +1,21 @@
+// write im main.styl --> @import 'utility.styl'
+.clearfix
+    zoom 1
+    &:after
+        display block
+        content ''
+        clear both
+        height 0
+
+
+box(border=none, bg=rgba(0,0,0,0.7), size= 200px ) //here we define default parammeters
+    width size 
+    height size     
+    background: bg
+    border-radius: 15px
+    if light bg                  //conditions
+        border 1px solid darken(bg, 25%)
+    else 
+        border 1px solid lighten(bg, 25%)
+
+

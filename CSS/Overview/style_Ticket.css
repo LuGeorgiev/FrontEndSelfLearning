@@ -1,0 +1,47 @@
+/*CSS document*/
+
+body {
+    background-color: darkgrey;
+}
+
+th {
+    float: left;
+    color: lightgrey;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+td {
+    padding: 0px 10px 5px 0px;
+}
+
+.first-col {
+    color: white;
+    font-size: 90%;
+    font-style: italic;
+}
+
+li {
+    list-style: url(./disc.png);
+    color: rgb(243, 243, 164);
+    padding-left: 0.7em;
+    text-indent: -.7em;
+    padding-bottom: 0px;
+}
+
+.red {
+    color: red;
+    padding-top: 1px;
+}
+
+.grey {
+    color: lightgrey;
+}
+
+.yellow {
+    color: rgb(243, 243, 164);
+}
+
+.orange {
+    color: rgb(233, 157, 16);
+}

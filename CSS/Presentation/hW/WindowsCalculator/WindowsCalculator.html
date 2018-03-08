@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows Calculatro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <ul>
+                <li>View</li>
+                <li>Edit</li>
+                <li>Help</li>
+
+            </ul>
+        </header>
+        <div>
+            <table class="output">
+                <tr>
+                    <td class="output" colspan="8">8854455</td>
+                </tr>
+            </table>
+            <table class="num-sys">
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                </tr>
+                <tr>
+                    <td class="left">63</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left">47</td>
+                    <td></td>
+                    <td></td>
+                    <td class="right">32</td>
+                </tr>
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>1000</td>
+                    <td>0111</td>
+                    <td>0001</td>
+                    <td>1011</td>
+                    <td>1011</td>
+                    <td>0111</td>
+                </tr>
+                <tr>
+                    <td class="left">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left">15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="right">0</td>
+                </tr>
+            </table>
+            <table class="input">
+                <tr>
+                    <td rowspan="3" class="radio">
+                        <input type="radio" name="num-sys" id="Hex">
+                        <label for="Hex">Hex</label><br>
+                        <input type="radio" name="num-sys" id="Dec" checked="checked">
+                        <label for="Dec">Dec</label><br>
+                        <input type="radio" name="num-sys" id="Oct">
+                        <label for="Oct">Oct</label><br>
+                        <input type="radio" name="num-sys" id="Bin">
+                        <label for="Bin">Bin</label><br>
+                    </td>
+                    <td></td>
+                    <td class="les-white">Mod</td>
+                    <td>A</td>
+                    <td>MC</td>
+                    <td>MR</td>
+                    <td>MS</td>
+                    <td>M+</td>
+                    <td>M-</td>
+                </tr>
+                <tr>
+                    <td>(</td>
+                    <td>)</td>
+                    <td>B</td>
+                    <td id="back-space"></td>
+                    <td>CE</td>
+                    <td>C</td>
+                    <td id="plus-minus"></td>
+                    <td id="sqrt"></td>
+                </tr>
+                <tr>
+                    <td class="les-white">RoL</td>
+                    <td class="les-white">RoR</td>
+                    <td>C</td>
+                    <td class="white">7</td>
+                    <td class="white">8</td>
+                    <td class="white">9</td>
+                    <td>/</td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="radio">
+                        <input type="radio" name="word" id="Qword" checked="checked">
+                        <label for="Qword">Qword</label><br>
+                        <input type="radio" name="word" id="Dword">
+                        <label for="Dword">Dword</label><br>
+                        <input type="radio" name="word" id="Word">
+                        <label for="Word">Word</label><br>
+                        <input type="radio" name="word" id="Byte">
+                        <label for="Byte">Byte</label><br>
+                    </td>
+                    <td class="les-white">Or</td>
+                    <td class="les-white">Xor</td>
+                    <td>D</td>
+                    <td class="white">4</td>
+                    <td class="white">5</td>
+                    <td class="white">6</td>
+                    <td>*</td>
+                    <td>1/x</td>
+                </tr>
+                <tr>
+                    <td class="les-white">Lsh</td>
+                    <td class="les-white">Rsh</td>
+                    <td>E</td>
+                    <td class="white">1</td>
+                    <td class="white">2</td>
+                    <td class="white">3</td>
+                    <td>-</td>
+                    <td rowspan="2">=</td>
+                </tr>
+                <tr>
+                    <td class="les-white">Not</td>
+                    <td class="les-white">And</td>
+                    <td>F</td>
+                    <td colspan="2" class="white">0</td>
+                    <td>.</td>
+                    <td>+</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

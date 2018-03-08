@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const input = 'We are <orgcase>liViNg</orgcase> in a <upcase>yellow submarine</upcase>. We <orgcase>doN\'t</orgcase> have <lowcase>anything</lowcase> else... have <lowcase>BAUuu</lowcase>';
+
+
+        //Unsuccessful recursion
+        String.prototype.removeOrgCase = function() {
+            const inQuote = '<orgcase>',
+                outQuote = '</orgcase>';
+            let result = '',
+                tempStr = [],
+                indexIn = 0,
+                indexOut = 0;
+
+            indexIn = this.indexOf(inQuote, indexIn);
+            //recursion bottom
+            if (indexIn === -1) {
+                return this;
+            }
+            tempStr.push(this.substring(0, indexIn));
+            indexOut = indexIn;
+            indexOut = this.indexOf(outQuote, indexOut);
+            tempStr.push(this.substring(indexIn + 9, indexOut));
+            tempStr.push(this.substring(indexOut + 10));
+            result = tempStr.join('');
+            result.removeOrgCase();
+        }
+        console.log(input.removeOrgCase());
+    </script>
+</body>
+
+</html>

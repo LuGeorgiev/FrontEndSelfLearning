@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <iframe src="https://my.telerikacademy.com/Courses/Courses/Details/386" height="200" width="1300"></iframe>
+    </div>
+    <form action="./results.html" method="GET">
+        <h3>Login Form</h3>
+        <fieldset>
+            <legend>Credentials</legend>
+            <input name="username" type="text" placeholder="Enter usernama" autofocus="autofocus"><br><br>
+            <input name="password" type="password" placeholder="Enter password" /><br>
+            <input type="button" value="my button">
+            <input type="reset" value="Reset!" />
+            <input type="submit" value="Login" />
+        </fieldset>
+        <fieldset>
+            <legend>KOR</legend>
+            <div>
+                <label>
+                    <span>Male</span> 
+                    <input type="radio" name="gender" id="Male">
+                </label>
+                <label for="Female">Female</label>
+                <input type="radio" name="gender" id="Female">
+                <label for="Other">Other</label>
+                <input type="radio" name="gender" id="Other">
+            </div>
+        </fieldset>
+        <div>
+            <select name="City" multiple="multiple">
+                <option value="1">Sofia</option>
+                <option value="2" selected >Plovdiv</option>
+                <option value="3">Tarnovo</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" value="apple">
+            <input type="checkbox" name="fruit" value="pear">
+            <input type="checkbox" name="fruit" value="bananna">
+        </div>
+        <div>
+            <input type="range" min="0" max="255" value="100" />
+            <input type="number">
+        </div>
+    </form>
+
+</body>
+
+</html>

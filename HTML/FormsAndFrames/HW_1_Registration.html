@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+
+<body>
+    <form action="" method="GET">
+        <table style="border:solid;color:black;" border="1">
+            <tfoot style="background-color:lightgreen; text-align:center">
+                <td colspan="4">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear this form">
+                </td>
+            </tfoot>
+            <tr>
+                <td style="text-align:right"><strong>Last Name</strong></td>
+                <td colspan="3">
+                    <input type="text" name="lname" placeholder="Georgiev">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>First Name</strong></td>
+                <td colspan="3">
+                    <input type="text" name="fname" placeholder="Lyubomir">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Address</strong></td>
+                <td colspan="3">
+                    <textarea name="address" cols="20" rows="5" placeholder="Bulgaria, Sofia, PODuiane 69, 1ap"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>City</strong></td>
+                <td>
+                    <input type="text" name="city" placeholder="Etropole" style="width:60pt">
+                </td>
+                <td>
+                    <strong>State</strong>
+                </td>
+                <td>
+                    <input type="text" name="state" placeholder="0000" style="width:25pt">
+                </td>
+
+            </tr>
+            <tr>
+                <td style="text-align:right">
+                    <strong>Zip/Postal Code</strong>
+                </td>
+                <td colspan="3">
+                    <input type="number" name="zipcode" placeholder="3256" style="width:40pt">
+                </td>
+
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Country</strong></td>
+                <td colspan="3">
+                    <select name="country">
+                        <option value="BG">Bulgaria</option>
+                        <option value="RUS">Russia</option>
+                        <option value="USA">Unated States of America</option>
+                        <option value="BRZ" selected>Brazil</option>
+                        <option value="SWZ">Switzerland</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right; word-wrap:break-word;width:10pt"><strong>Phone(country code, area code,number)</strong></td>
+                <td colspan="3">
+                    (+
+                    <input type="number" name="countrycode" placeholder="359" style="width:30pt"> )
+                    <input type="number" name="areacode" placeholder="88" style="width:25pt"> -
+                    <input type="number" name="number" placeholder="886622" style="width:50pt">
+                </td>
+
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>E-mail</strong></td>
+                <td colspan="3">
+                    <input type="email" name="email" placeholder="lu@etropole.net">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Birth Date</strong></td>
+                <td colspan="3">
+                    <label for="month">Month</label>
+                    <input type="number" name="month" placeholder="03" pattern="[0-1]{1}[0-9]{1}" style="width:25pt" />
+                    <label for="day">Day</label>
+                    <input type="number" name="day" placeholder="14" pattern="[0-3]{1}[0-9]{1}" style="width:25pt" />
+                    <label for="yaer">Year(4 digit)</label>
+                    <input type="number" name="year" placeholder="1978" style="width:33pt" />
+                </td>
+
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Gender</strong></td>
+                <td colspan="3">
+                    <select name="Gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other" selected>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Starting Date</strong></td>
+                <td colspan="3">
+                    <input type="radio" name="start">
+                    <label for="start">Spring 2006</label>
+                    <input type="radio" name="start">
+                    <label for="start">Summer 2006</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Comments/Questions</strong></td>
+                <td colspan="3">
+                    <textarea name="comments" cols="35" rows="5" placeholder="Please, send me more information about logging."></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

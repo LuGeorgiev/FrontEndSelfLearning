@@ -1,0 +1,117 @@
+/*CSS Windows Ca;culator*/
+
+body {
+    font-size: 12px;
+    border: 1px solid #aaa;
+    width: 450px;
+    border-radius: 2px;
+}
+
+.main {
+    background: rgba(240, 246, 249, 1);
+    background: -moz-linear-gradient(top, rgba(240, 246, 249, 1) 0%, rgba(154, 188, 213, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(240, 246, 249, 1)), color-stop(100%, rgba(154, 188, 213, 1)));
+    background: -webkit-linear-gradient(top, rgba(240, 246, 249, 1) 0%, rgba(154, 188, 213, 1) 100%);
+    background: -o-linear-gradient(top, rgba(240, 246, 249, 1) 0%, rgba(154, 188, 213, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(240, 246, 249, 1) 0%, rgba(154, 188, 213, 1) 100%);
+    background: linear-gradient(to bottom, rgba(240, 246, 249, 1) 0%, rgba(154, 188, 213, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f0f6f9', endColorstr='#9abcd5', GradientType=0);
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+header ul li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+}
+
+header ul li::first-letter {
+    text-decoration: underline;
+}
+
+table.output {
+    background: rgba(154, 188, 213, 1);
+    background: -moz-linear-gradient(top, rgba(154, 188, 213, 1) 0%, rgba(240, 246, 249, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(154, 188, 213, 1)), color-stop(100%, rgba(240, 246, 249, 1)));
+    background: -webkit-linear-gradient(top, rgba(154, 188, 213, 1) 0%, rgba(240, 246, 249, 1) 100%);
+    background: -o-linear-gradient(top, rgba(154, 188, 213, 1) 0%, rgba(240, 246, 249, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(154, 188, 213, 1) 0%, rgba(240, 246, 249, 1) 100%);
+    background: linear-gradient(to bottom, rgba(154, 188, 213, 1) 0%, rgba(240, 246, 249, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9abcd5', endColorstr='#f0f6f9', GradientType=0);
+    margin-top: 10px;
+}
+
+.output {
+    width: 440px;
+    font-size: 2rem;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+table {
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.num-sys {
+    width: 440px;
+    padding: 0;
+}
+
+.num-sys td:last-child {
+    width: 20px;
+    padding-right: 4px;
+}
+
+td.right {
+    text-align: right;
+    color: #444;
+}
+
+table.input {
+    border-style: none;
+}
+
+.input td {
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    width: 40px;
+    text-align: center;
+    font-size: 1.3em;
+    height: 30px;
+}
+
+.input td:hover {
+    background-color: blanchedalmond;
+}
+
+td.radio {
+    width: 80px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.white {
+    background-color: rgb(229, 238, 241);
+}
+
+.les-white {
+    background-color: rgb(192, 207, 202);
+}
+
+#sqrt {
+    background: url(sqrt.png)
+}
+
+#sqrt:hover {
+    background-color: blanchedalmond;
+}

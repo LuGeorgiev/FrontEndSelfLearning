@@ -1,0 +1,150 @@
+     /*CSS Forum Post*/
+     
+     body {
+         background: #cb60b3;
+         background: -moz-linear-gradient(top, #cb60b3 4%, #ad1283 6%, #de47ac 100%);
+         background: -webkit-linear-gradient(top, #cb60b3 4%, #ad1283 6%, #de47ac 100%);
+         background: linear-gradient(to bottom, #cb60b3 4%, #ad1283 6%, #de47ac 100%);
+         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac', GradientType=0);
+         color: whitesmoke;
+         font-size: 12px;
+         line-height: 16px;
+     }
+     
+     a {
+         text-decoration: none;
+         color: whitesmoke;
+     }
+     
+     @font-face {
+         font-family: Edwardian;
+         src: url(../LoremIpsumPage/ITCEDSCR.TTF);
+     }
+     
+     h1 {
+         font-family: Edwardian;
+         font-size: 4em;
+         margin-bottom: 60px;
+     }
+     
+     nav ul.nav-ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         border: 1px solid #3a072c;
+         width: 1100px;
+         border-radius: 10px;
+         margin-left: 20px;
+     }
+     
+     nav ul li {
+         float: left;
+     }
+     
+     nav ul li a {
+         display: block;
+         text-align: center;
+         padding: 10px 16px;
+         font-size: 1.5em;
+     }
+     
+     aside ul {
+         list-style-type: none;
+     }
+     
+     .username {
+         position: absolute;
+         top: 20px;
+         right: 70px;
+     }
+     
+     .password {
+         position: absolute;
+         top: 45px;
+         right: 70px;
+     }
+     
+     .submit {
+         position: absolute;
+         top: 75px;
+         right: 235px;
+     }
+     
+     input[type="text"],
+     input[type="password"] {
+         border: 2px solid purple;
+         background-color: #bd0d8e;
+         border-radius: 8px;
+     }
+     
+     input[type="submit"] {
+         background: #940a6f;
+         border-style: outset;
+         border-radius: 4px;
+         color: whitesmoke;
+     }
+     
+     section article {
+         border: 1px solid #3a072c;
+         width: 1000px;
+         margin-top: 20px;
+         padding: 0;
+         border-radius: 10px;
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+     
+     section article footer p {
+         text-align: right;
+     }
+     
+     section article footer p a {
+         color: #999;
+     }
+     
+     .first-wig {
+         width: 300px;
+         position: absolute;
+         top: 180px;
+         right: 150px;
+         border: 1px solid #3a072c;
+         border-radius: 10px;
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+     
+     .second-wig {
+         width: 300px;
+         position: absolute;
+         top: 310px;
+         right: 150px;
+         border: 1px solid #3a072c;
+         border-radius: 10px;
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+     
+     .second-wig ul {
+         margin: 5;
+         padding: 0;
+     }
+     
+     .second-wig a:before {
+         content: url(lamp.gif);
+     }
+     
+     .third-wig {
+         width: 300px;
+         position: absolute;
+         top: 470px;
+         right: 150px;
+         border: 1px solid #3a072c;
+         border-radius: 10px;
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+     
+     footer {
+         text-align: center;
+     }

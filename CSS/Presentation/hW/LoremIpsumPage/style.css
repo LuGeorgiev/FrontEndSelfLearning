@@ -1,0 +1,22 @@
+/*CSS Lorem Ipsum*/
+
+body {
+    color: #0094ff;
+    font-size: 16px;
+    font-family: Consolas;
+}
+
+@font-face {
+    font-family: Edwardian;
+    src: url(ITCEDSCR.TTF);
+}
+
+p::first-letter {
+    font-family: Edwardian;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p::first-line {
+    font-weight: bold;
+}

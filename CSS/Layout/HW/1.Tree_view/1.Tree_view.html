@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree view</title>
+    <style>
+        ul {
+            list-style-type: none;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 150px;
+        }
+        
+        ul ul {
+            display: none;
+        }
+        
+        li:hover>ul {
+            padding-left: 20px;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #808080;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #808080;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li> <a href="#">List</a>
+            <ul>
+                <li><a href="#">Sub List</a>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li><a href="#">Sub List</a></li>
+                                <li><a href="#">Sub List</a></li>
+                                <li><a href="#">Sub List</a></li>
+                            </ul>
+                            <a href="#">Sub List</a></li>
+                        <li><a href="#">Sub List</a></li>
+                        <li><a href="#">Sub List</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+            </ul>
+        </li>
+        <li> <a href="#">List</a>
+            <ul>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+            </ul>
+        </li>
+        <li><a href="#">List</a>
+            <ul>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+            </ul>
+        </li>
+        <li><a href="#">List</a>
+            <ul>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+                <li><a href="#">Sub List</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>

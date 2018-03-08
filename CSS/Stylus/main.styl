@@ -1,0 +1,82 @@
+// .hlist
+//     list-style none
+// .list-item
+//     d=inline-block
+//     display d
+//     padding: 15px
+
+
+// // define variables with equal
+// themeFontColor = yellowgreen
+// themeBgColor = white
+// side = 'top'
+// body
+//     background-color themeBgColor
+//     color themeFontColor
+
+// a
+//     border-{side} 1px solid black
+//     color themeFontColor
+//     &:hover
+//         color lighten(themeFontColor,95%)
+
+// for i in (0..10)
+//     .item-{i}
+//         color blue
+
+// //property look-up
+// .rect
+//     width: 100px
+//     height:( @width/2) + 150px
+//     c1=#123456
+//     c2=#654321
+//     background (c1+c2)
+
+// //arrays
+// props= (color blue) (font-size 14px) //this is array
+// body
+//     for pair in props
+//         {pair[0]} pair[1]
+
+
+// //MIxins for gradients are usefull
+// vlinear-gradient(from, to) // moje i (from-col, from-poss, to-color, to-poss) 4 promenlivi
+//     background: from; /* Old browsers */
+//     background: -moz-linear-gradient(left, from 0%, to 42%); /* FF3.6-15 */
+//     background: -webkit-linear-gradient(left, from 0%,to 42%); /* Chrome10-25,Safari5.1-6 */
+//     background: linear-gradient(to right, from 0%,to 42%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// body
+//     vlinear-gradient(#fff,#888)
+// #root
+//     vlinear-gradient(red,green)
+
+// //Mixin for clearfix
+// clearfix()
+//     zoom 1
+//     &:after
+//         display block
+//         content ''
+//         clear both
+//         height 0
+// #root
+//     clearfix()
+
+// //Arguments mixin
+// box(border=none, bg=rgba(0,0,0,0.7), size= 200px ) //here we define default parammeters
+//     width size 
+//     height size     
+//     background: bg
+//     border-radius: 15px
+//     if light(bg)                  //conditions
+//         border 1px solid darken(bg, 25%)
+//     else 
+//         border 1px solid lighten(bg, 25%)
+// .rect
+//     display inline-block
+//     box '1px solid black', rgba(189,0,0,0.6), 100px
+
+@import 'utility.styl'
+
+.root
+    .clearfix()
+
