@@ -1,21 +1,26 @@
 /* jshint esversion:6*/
 function solve(array) {
     let juiceRepo = {};
+    let bottles = {};
+
     for (const iterator of array) {
         const line = iterator.split(/ => /g);
         const juice = line[0];
         const qty = +line[1];
+
         if (juiceRepo.hasOwnProperty(juice)) {
             juiceRepo[juice] += qty;
         } else {
             juiceRepo[juice] = qty;
         }
+
+        if (juiceRepo[juice] >= 1000) {
+            bottles[juice] = parseInt(juiceRepo[juice] / 1000);
+        }
     }
     let result = "";
-    for (const key in juiceRepo) {
-        if (juiceRepo[key] > 1000) {
-            result += `${key} => ${Math.floor(juiceRepo[key]/1000)}\n`;
-        }
+    for (const key in bottles) {
+        result += `${key} => ${bottles[key]}\n`;
     }
 
     return result;

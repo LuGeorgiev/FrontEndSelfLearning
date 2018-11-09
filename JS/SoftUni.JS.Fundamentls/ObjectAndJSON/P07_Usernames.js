@@ -7,20 +7,23 @@ function solve(array) {
             usernames.push(name);
         }
     }
+    return usernames.sort((a, b) => a.length - b.length ||
+        a.localeCompare(b)).join('\n');
 
-    return usernames
-        .sort(function(a, b) {
-            if (a.length == b.length) {
-                if (a < b) {
-                    return -1;
-                } else if (a > b) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-            return a.length - b.length;
-        });
+    //This is my ugly way to solve teh task
+    // return usernames
+    //     .sort(function(a, b) {
+    //         if (a.length == b.length) {
+    //             if (a < b) {
+    //                 return -1;
+    //             } else if (a > b) {
+    //                 return 1;
+    //             } else {
+    //                 return 0;
+    //             }
+    //         }
+    //         return a.length - b.length;
+    //     });
 }
 
 const input = ['Denise',
