@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" id="customer">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>eve@gmail.com</td>
+        </tr>
+        <tr>
+            <td>nick</td>
+            <td>nick@abv.bg</td>
+        </tr>
+        <tr>
+            <td>marta</td>
+            <td>Marta@bgb.bg</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@tom.bg</td>
+        </tr>
+    </table>
+    Email: <input type="text" name="email" />
+    <button onclick="deletedByEmail()">Delete</button>
+    <div id="result">
+    </div>
+    <script>
+        function deletedByEmail() {
+            let inputEmail = document.getElementsByName('email')[0].value;
+            let tableRows = document.getElementById('customer')
+                .children[0].children;
+            console.log(tableRows);
+            for (let i = 1; i < tableRows.length; i++) {
+                const currentValue = tableRows[i].children[1].textContent;
+                if (inputEmail === currentValue) {
+                    tableRows[i].parentNode.removeChild(tableRows[i]);
+                    document.getElementById('result')
+                        .textContent = 'Deleted';
+                    return;
+                }
+                document.getElementById('result')
+                    .textContent = 'Not found';
+            }
+        }
+    </script>
+</body>
+
+</html>
