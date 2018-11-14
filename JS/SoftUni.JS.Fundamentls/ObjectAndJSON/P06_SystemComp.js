@@ -1,44 +1,32 @@
 /*jshint esversion:6*/
-//TODO not solved
 function solve(array) {
-    const db = [];
+    const db = new Map();
     for (const inputLine of array) {
-        const tokens = inputLine.split(" | ");
-        const system = tokens[0];
-        const componnet = tokens[1];
-        const subComponnet = tokens[2];
+        const [system, componnet, subComponnet] = inputLine.split(" | ");
 
-        if (!db.hasOwnProperty(system)) {
-            db[system] = [];
-            db[system][componnet] = [];
-
-        } else if (!db[system].hasOwnProperty(componnet)) {
-            db[system][componnet] = [];
+        if (!db.has(system)) {
+            db.set(system, new Map());
         }
-        db[system][componnet].push(subComponnet);
+        if (!db.get(system).get(componnet)) {
+            db.get(system).set(componnet, []);
+        }
+        db.get(system).get(componnet).push(subComponnet);
     }
 
-    let sortDb = db.sort(function(a, b) {
-        if (b.length == a.length) {
-            if (a < b) {
-                return -1;
-            } else if (a > b) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-        return b.length - a.length;
-    });
-
+    let sortedDb = Array.from(db.keys())
+        .sort((a, b) => db.get(b).size - db.get(a).size)
+        .sort();
 
 
     let result = "";
-    for (const key in sortDb) {
+    for (const key of sortedDb) {
         result += `${key}\n`;
-        for (const system in sortDb[key]) {
+        const sortedComponents = Array.from(db.get(key).keys())
+            .sort((a, b) => db.get(key).get(b).length - db.get(key).get(a).length);
+
+        for (const system of sortedComponents) {
             result += `|||${system}\n`;
-            for (const subSys of sortDb[key][system]) {
+            for (const subSys of db.get(key).get(system)) {
                 result += `||||||${subSys}\n`;
             }
         }
