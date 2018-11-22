@@ -1,6 +1,7 @@
 /*jshint esversion: 6*/
 function initializeTable() {
     $("#createLink").on('click', createCountry);
+
     addCountryTotable('Bulgaria', 'Sofia');
     addCountryTotable('Germany', 'Berlin');
     addCountryTotable('Russia', 'Moscow');
@@ -17,8 +18,9 @@ function initializeTable() {
                 .append($('<a href="#">[Delete]</a>')
                     .on('click', deleteRow)));
 
+        tableRow.css('display', 'none');
         $('#countriesTable').append(tableRow);
-
+        tableRow.fadeIn(2000);
         hideButtons();
     }
 
@@ -35,19 +37,27 @@ function initializeTable() {
     function moveUp() {
         //console.log($(this).parent().parent());
         let row = $(this).parent().parent();
-        row.insertBefore(row.prev());
-        hideButtons();
+        row.fadeOut(function() {
+            row.insertBefore(row.prev());
+            hideButtons();
+            row.fadeIn();
+        });
     }
 
     function moveDown() {
         let row = $(this).parent().parent();
-        row.insertAfter(row.next());
-        hideButtons();
+        row.fadeOut(function() {
+            row.insertAfter(row.next());
+            hideButtons();
+            row.fadeIn();
+        });
     }
 
     function deleteRow() {
-        $(this).parent().parent().remove();
-        hideButtons();
+        $(this).fadeOut(function() {
+            $(this).parent().parent().remove();
+            hideButtons();
+        });
     }
 
     function hideButtons() {
