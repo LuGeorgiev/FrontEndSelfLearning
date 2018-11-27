@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="element">Towns</h2>
+
+    <script>
+        const arrow = {
+            name: "Pesho",
+            moveis: ["Game of Thrones", "Venom", "Alone"],
+            printMovies: function() {
+                this.moveis.forEach((movie) => {
+                    console.log(`${this.name} wathched ${movie}`);
+                });
+            }
+        };
+        document.getElementById("element")
+            .addEventListener("click", arrow.printMovies()
+                .bind(arrow)); //best practice
+    </script>
+</body>
+
+</html>
