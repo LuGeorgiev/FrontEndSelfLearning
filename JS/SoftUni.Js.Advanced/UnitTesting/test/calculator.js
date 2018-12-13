@@ -55,7 +55,6 @@ describe.only("createCalculator", () => { //will run only this for it also
         });
         it('should create and double subtrackt', () => {
             //const calculator = createCalculator();
-
             calculator.subtract(2);
             calculator.subtract(3);
             const result = calculator.get();
@@ -64,7 +63,6 @@ describe.only("createCalculator", () => { //will run only this for it also
         });
         it('should create and subtract', () => {
             //const calculator = createCalculator();
-
             calculator.add(5.3);
             calculator.subtract(1.1);
             const result = calculator.get();
