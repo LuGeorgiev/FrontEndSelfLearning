@@ -1,0 +1,23 @@
+{
+    "name": "Lubo",
+    "familyName": "Georgiev",
+    "age": "40",
+    "hobbies": {
+        "games": [
+            "Diablo 3",
+            "Magic The Gathering",
+            "UFO: Alien Invasion"
+        ],
+        "movies": [
+            "Game of Thrones",
+            "The Godfather",
+            "Beautiful Mind",
+            "Ghandi"
+        ],
+        "sport": [
+            "Calisthetics",
+            "Skiing",
+            "Boxing"
+        ]
+    }
+}
