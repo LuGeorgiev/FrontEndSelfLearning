@@ -1,5 +1,9 @@
-const furnitureModel = function(){
-    const create = function(params){
+const requester = requires('../helpers/requester.js');
+const storage = requires('../helpers/storage.js');
+
+
+module.exports = (function() {
+    const create = function(params) {
         var data = {
             make: params.make,
             model: params.model,
@@ -18,4 +22,4 @@ const furnitureModel = function(){
     return {
         create
     };
-}();
+}());

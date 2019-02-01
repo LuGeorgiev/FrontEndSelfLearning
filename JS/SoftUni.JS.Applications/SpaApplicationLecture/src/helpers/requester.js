@@ -1,7 +1,9 @@
-const requester = function(){
+const storage = require('../helpers/storage');
+
+module.exports = (function() {
     const baseUrl = 'https://baas.kinvey.com/';
 
-    const call = function(url, data, headers, method){
+    const call = function(url, data, headers, method) {
         data = data || {};
         headers = headers || {};
         url = baseUrl + url;
@@ -9,7 +11,7 @@ const requester = function(){
         headers["Content-Type"] = 'application/json';
         headers["X-Kinvey-API-Version"] = 3;
 
-        if(!!storage.getData('authToken')) {
+        if (!!storage.getData('authToken')) {
             headers.Authorization = 'Kinvey ' + storage.getData('authToken');
         }
 
@@ -21,26 +23,26 @@ const requester = function(){
         });
     };
 
-    const get = function(url, data, headers){
+    const get = function(url, data, headers) {
         return call(url, data, headers, 'GET');
     };
 
-    const post = function(url, data, headers){
+    const post = function(url, data, headers) {
         return call(url, data, headers, 'POST');
     };
 
-    const put = function(url, data, headers){
+    const put = function(url, data, headers) {
         return call(url, data, headers, 'PUT');
     };
 
-    const del = function(url, data, headers){
+    const del = function(url, data, headers) {
         return call(url, data, headers, 'DELETE');
     };
 
     return {
-        get, 
+        get,
         post,
         put,
         del
     };
-}();
+}());

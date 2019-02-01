@@ -1,4 +1,7 @@
-const userModel = function() {
+const requester = requires('../helpers/requester.js');
+const storage = requires('../helpers/storage.js');
+
+module.exports = (function() {
     const login = function(username, password) {
         var authString = btoa(`${username}:${password}`);
         var headers = {
@@ -37,4 +40,4 @@ const userModel = function() {
         logout,
         register
     }
-}();
+}());

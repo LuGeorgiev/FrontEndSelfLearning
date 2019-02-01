@@ -1,4 +1,4 @@
-const home = function(){
+module.exports = (function() {
     const index = function(ctx) {
         ctx.swap('<h2>Начало</h2>');
     };
@@ -6,4 +6,4 @@ const home = function(){
     return {
         index
     };
-}();
+}());

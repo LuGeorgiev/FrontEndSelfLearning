@@ -1,18 +1,24 @@
 {
-  "name": "furniture-system",
-  "version": "1.0.0",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Stamo Petkov",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.2.1",
-    "handlebars": "^4.0.12",
-    "jquery": "^3.3.1",
-    "popper": "^1.0.1",
-    "sammy": "^0.7.6"
-  },
-  "description": ""
+    "name": "furniture-system",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "author": "Lyubomir Georgiev",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^4.2.1",
+        "handlebars": "^4.0.12",
+        "jquery": "^3.3.1",
+        "popper": "^1.0.1",
+        "popper.js": "^1.14.6",
+        "sammy": "^0.7.6"
+    },
+    "description": "",
+    "devDependencies": {
+        "copy-webpack-plugin": "^4.6.0",
+        "webpack": "^4.29.0",
+        "webpack-cli": "^3.2.1"
+    }
 }

@@ -1,4 +1,7 @@
-const user = function() {
+const storage = require('../helpers/storage');
+const userModel = require('../models/userModel');
+
+module.exports = (function() {
     const getLogin = function(ctx) {
         ctx.partial('views/user/login.hbs');
     };
@@ -53,4 +56,4 @@ const user = function() {
         getRegister,
         postRegister
     };
-}();
+}());

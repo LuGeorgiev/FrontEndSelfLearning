@@ -1,6 +1,12 @@
-const app = Sammy('#container', function(){
+const home = require('./controllers/home');
+const user = require('./controllers/user');
+const furniture = require('./controllers/furniture');
+import Sammy from 'sammy';
+import '../node_modules/sammy/lib/plugins/sammy.handlebars';
+
+const app = Sammy('#container', function() {
     this.use('Handlebars', 'hbs');
-    
+
     this.get('#/', home.index);
     this.get('#/login', user.getLogin);
     this.post('#/login', user.postLogin);
@@ -11,6 +17,6 @@ const app = Sammy('#container', function(){
     this.post('#/furniture/create', furniture.postCreate);
 });
 
-$(function(){
+$(function() {
     app.run('#/');
 });

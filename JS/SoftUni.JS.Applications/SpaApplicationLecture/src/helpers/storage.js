@@ -1,4 +1,4 @@
-const storage = function() {
+module.export = (function() {
     const appKey = 'kid_ByZQkV4JN';
     const appSecret = 'a4991b1523544ee29e1e41c809b93ff1';
 
@@ -15,19 +15,19 @@ const storage = function() {
     };
 
     const saveUser = function(data) {
-        storage.saveData('userInfo', {
+        saveData('userInfo', {
             id: data._id,
             username: data.username,
             firstName: data.first_name,
             lastName: data.last_name
         });
 
-        storage.saveData('authToken', data._kmd.authtoken);
+        saveData('authToken', data._kmd.authtoken);
     };
 
     const deleteUser = function() {
-        storage.deleteData('authToken');
-        storage.deleteData('userInfo');
+        deleteData('authToken');
+        deleteData('userInfo');
     };
 
     return {
@@ -39,4 +39,4 @@ const storage = function() {
         saveUser,
         deleteUser
     };
-}();
+}());
