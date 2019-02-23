@@ -25,13 +25,12 @@ module.exports = {
     },
     status: async(req, res) => {
         const orders = await orderApi.getByUserId(req.user._id);
-        orders.map(o => {
-                o.productName = o.product.category
-            })
-            //res.json(orders);
+
+        //res.json(orders);
         res.render('order/status', { orders });
     },
     details: async(req, res) => {
-        res.render('order/details')
+        const order = await orderApi.getById(req.params.id);
+        res.render('order/details', order)
     }
 }
