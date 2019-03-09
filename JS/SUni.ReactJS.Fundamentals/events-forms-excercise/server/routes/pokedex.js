@@ -7,8 +7,7 @@ const pokemons = require('./../data/pokemons')
 
 router.post('/create',(req,res,next)=>{
 
-    pokemons.addPokem((req.body))
-
+    pokemons.addPokem((req.body))    
 })
 
 router.get('/pokedex',(req,res,next)=>{

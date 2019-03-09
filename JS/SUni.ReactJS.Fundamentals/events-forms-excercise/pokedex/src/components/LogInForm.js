@@ -1,6 +1,6 @@
 import React, {Component}  from 'react';
 
-class SignUpForm extends Component  {
+class LogInForm extends Component  {
     constructor(){
         super();
         this.state = {
@@ -14,38 +14,38 @@ class SignUpForm extends Component  {
         const value = event.target.value;
         const newObj = {};
         newObj[name]=value;
-        //console.log(name, value);
         this.setState({
             form:Object.assign(this.state.form, newObj)
         });
     }
-    handleSubmit = (event)=>{
+
+    handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:5000/auth/signup',{
+        fetch('http://localhost:5000/auth/login',
+        {
           method:'POST',
           body: JSON.stringify(this.state.form) ,
           headers:{
-              'Content-type':'application/json'
+              'Content-Type':'application/json'
           } 
         })
         .then(data => data.json())
-        .then(response => console.log(response));
+        .then(res => {
+            if (res.success && res.token) {
+                localStorage.setItem("token", res.token);
+                this.props.setLoggedIn();
+            }
+        })
+        .catch(err=>console.log(err))
     }
-
-    
-
+   
     render(){
         return(
-            
         <form className="offset-md-1">
             <div className="form-group">
                 <label htmlFor="input-email">Email address</label>
                 <input data-name="email" type="email" onChange={this.handleChnage} className="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Enter email"/>
                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div className="form-group">
-                <label htmlFor="input-username">Username</label>
-                <input data-name="name" type="text" onChange={this.handleChnage} className="form-control" id="input-username" aria-describedby="emailHelp" placeholder="Username"/>
             </div>
             <div className="form-group">
                 <label htmlFor="input-password">Password</label>
@@ -58,4 +58,4 @@ class SignUpForm extends Component  {
 }    
 
 
-export default SignUpForm;
+export default LogInForm;
