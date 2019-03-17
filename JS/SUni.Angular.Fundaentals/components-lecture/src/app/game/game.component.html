@@ -1,0 +1,29 @@
+
+<!-- <input #name placeholder="name">
+<button (click)="showName(name.value)">Send name</button>
+<h2 *ngIf="name_user">Your name is: {{name_user}}</h2> -->
+
+<input [(ngModel)]="name_user" placeholder="name">
+<button>Send</button>
+<h1 *ngIf="name_user"> Your name is: {{name_user}}</h1>
+
+<div *ngIf="games">
+  <ul>
+    <li *ngFor="let game of games; let i = index;">
+      <h1 [class.myStyle]="isShown">{{game.title | uppercase}}</h1>
+      <h5> {{(i+3)*(i+2)}}</h5>
+      <br>
+      <h5>With id: {{game.id}}</h5>
+      <br>
+      <!-- <img src={{game.image}} alt="image"> -->
+      <img [src]="game.image" alt="image">
+      <app-subscribe (notification)="notifyMe($event)" [subGame]="game"></app-subscribe>
+    </li>
+  </ul>
+  <button (click)="showContacts()">Show contacts</button>
+</div>
+<div *ngIf="isShown">
+  <h1>
+    Our contacs are to be defined...    
+  </h1>
+</div>
