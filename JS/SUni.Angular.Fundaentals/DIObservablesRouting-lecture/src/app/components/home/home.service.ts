@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { GitHubProfile } from './github-profile';
+import { GitHubProfile } from './github-profile.model';
 
 @Injectable()
 export class HomeService {
+    
     constructor(private httpClient:HttpClient){
     }
-    
+
     getDate(){
         return "Hello from service";
     }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
-import { GitHubProfile } from './github-profile';
+import { GitHubProfile } from './github-profile.model';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [HomeService]
