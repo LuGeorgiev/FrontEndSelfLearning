@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { Movies } from '../models/movies';
+import { Movie } from '../models/movie';
 
 @Component({
   selector: 'app-movies',
@@ -8,20 +9,43 @@ import { Movies } from '../models/movies';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  popular :Object;
-  theaters :Object;
+  popular: Array<Movie>;
+  theaters: Array<Movie>;
+  kids: Array<Movie>;
+  dramas: Array<Movie>;
+  searchRes: any;
+  isSearch: boolean = false;
 
-  constructor(private moveiesService:MoviesService) { }
+  constructor(private moveiesService: MoviesService) { }
 
+  search(myQuery) {
+    this.moveiesService.findAMovie(myQuery.search)
+      .subscribe((data) => {
+        this.searchRes = data;
+        if (this.searchRes.results.length>0) {          
+          this.isSearch=true;
+        }
+      })
+  }
   ngOnInit() {
     this.moveiesService.gtePopular()
-      .subscribe(data=>{
+      .subscribe(data => {
         this.popular = data;
       });
 
     this.moveiesService.getInTeatres()
-      .subscribe(data=>{
+      .subscribe(data => {
         this.theaters = data;
+      })
+
+    this.moveiesService.getDramas()
+      .subscribe(data => {
+        this.dramas = data;
+      })
+
+    this.moveiesService.getKids()
+      .subscribe(data => {
+        this.kids = data;
       })
   }
 

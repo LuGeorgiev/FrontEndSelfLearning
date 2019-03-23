@@ -1,3 +1,27 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Find a movie</h1>
+        <p>Search for a movie using the form below:</p>
+        <form #form="ngForm" (submit)="search(form.value)">
+            <input type="text" class="form-control" name="search" ngModel>
+            <button type="sumbit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default" *ngIf="isSearch">
+    <div class="panel-heading">
+        <h3 class="panel-title">Searched movies</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div *ngFor="let movie of searchRes.results;let i=index" class="col-md-2">
+                <app-movie [movie]="movie" *ngIf="i<6"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="panel panel-default" *ngIf="popular">
     <div class="panel-heading">
         <h3 class="panel-title">Popular Movies</h3>
@@ -29,6 +53,30 @@
                     <p>{{movie.release_date}}</p>
                     <p><a class="btn btn-default" href="#">View Details</a></p>
                 </div> -->
+                <app-movie [movie]="movie" *ngIf="i<6"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Drama</h3>
+    </div>
+    <div class="panel-body" *ngIf="dramas">
+        <div class="row">
+            <div *ngFor="let movie of dramas.results;let i=index" class="col-md-2">
+                <app-movie [movie]="movie" *ngIf="i<6"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Kids</h3>
+    </div>
+    <div class="panel-body" *ngIf="kids">
+        <div class="row">
+            <div *ngFor="let movie of kids.results;let i=index" class="col-md-2">
                 <app-movie [movie]="movie" *ngIf="i<6"></app-movie>
             </div>
         </div>
