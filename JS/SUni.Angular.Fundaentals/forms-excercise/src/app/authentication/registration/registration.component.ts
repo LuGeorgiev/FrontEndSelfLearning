@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterModel } from '../../models/register.model';
+import { AuthenticationService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -8,8 +10,10 @@ import { RegisterModel } from '../../models/register.model';
 })
 export class RegistrationComponent implements OnInit {
   model:RegisterModel;
+  registerFailed: boolean = false;
+  errorMsg:string = '';
 
-  constructor() {
+  constructor(private authService : AuthenticationService, private router: Router) {
     this.model = new RegisterModel('','','','','',0);
    }
 
@@ -18,7 +22,15 @@ export class RegistrationComponent implements OnInit {
 
   register(){
     delete this.model['confirmPassword'];
-
+    this.authService.register(this.model)
+    .subscribe(data=>{
+      this.router.navigate(['/login'])
+    },
+    err=>{
+      //console.log(err);
+      this.registerFailed=true;
+      this.errorMsg = err.error.description
+    })
     //console.log(JSON.stringify(this.model));
   }
 
