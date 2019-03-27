@@ -23,7 +23,8 @@ erorMsg:string = '';
   login(){
     this.authService.login(this.model)
     .subscribe(data=>{
-      this.successfulLogin(data) 
+      console.log(data);
+      //this.successfulLogin(data) 
     },
     err=>{
       this.loginFailed=true;
@@ -31,10 +32,10 @@ erorMsg:string = '';
     })
   }
 
-  successfulLogin(data){
-    this.authService.authToken = data['_kmd']['authtoken'];
-    localStorage.setItem('authtoken',data['_kmd']['authtoken']);
-    localStorage.setItem('username',data['username']);
-    this.router.navigate(['/home'])
-  }
+  // successfulLogin(data){      //MOVED TO INTERCEPTOR
+  //   this.authService.authToken = data['_kmd']['authtoken'];
+  //   localStorage.setItem('authtoken',data['_kmd']['authtoken']);
+  //   localStorage.setItem('username',data['username']);
+  //   this.router.navigate(['/home'])
+  // }
 }

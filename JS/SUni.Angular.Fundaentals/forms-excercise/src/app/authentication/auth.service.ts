@@ -16,45 +16,48 @@ export class AuthenticationService {
     constructor(private http: HttpClient) {
 
     }
-    private createAuthHeader(type: string) {
-        if(type=="Basic"){
-            return new HttpHeaders({
-                'Authorization':`Basic ${btoa(`${appKey}:${appSecret}`)}`,
-                'Content-Type':'application/json'
-            })
-        } else{
-            return new HttpHeaders({
-                'Authorization':`Kinvey ${localStorage.getItem('authtoken')}`,
-                'Content-Type':'application/json'
-            })
-        }
-    }
+    // private createAuthHeader(type: string) { //NOT NEEDED WHEN USING INTERCEPTORS
+    //     if(type=="Basic"){
+    //         return new HttpHeaders({
+    //             'Authorization':`Basic ${btoa(`${appKey}:${appSecret}`)}`,
+    //             'Content-Type':'application/json'
+    //         })
+    //     } else{
+    //         return new HttpHeaders({
+    //             'Authorization':`Kinvey ${localStorage.getItem('authtoken')}`,
+    //             'Content-Type':'application/json'
+    //         })
+    //     }
+    // }
 
     login(model:LoginModel){
         return this.http.post(
             loginUrl, 
             JSON.stringify(model),
-            {
-                headers:this.createAuthHeader('Basic')
-            });
+            // {
+            //     headers:this.createAuthHeader('Basic') // not needed with INTERCEPTORS
+            // }
+        );
     }
 
     register(model:RegisterModel){
         return this.http.post(
             registerUrl,
             JSON.stringify(model),
-            {
-                headers:this.createAuthHeader('Basic')
-            })
+            // {
+            //     headers:this.createAuthHeader('Basic')
+            // }
+        );
     }
 
     logout(){
         return this.http.post(
             logoutUrl,
             {},
-            {
-                headers: this.createAuthHeader('Kinvey')
-            })
+            // {
+            //     headers: this.createAuthHeader('Kinvey')
+            // }
+        );
     }
     get authToken(){
          return this.currentAuthToken;
