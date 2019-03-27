@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h1>Animations</h1>
+    <div class="row">
+        <button class="btn btn-primary" (click)="onAnimate()">Animate</button>
+        <button class="btn btn-primary" (click)="onShrink()">Shrink</button>
+    </div>
+    <hr>
+    <div style="width: 100px; height: 100px;"
+    [@divState]="state"
+    (@divState.start)="animationStart($event)"
+    (@divState.done)="animationEnd($event)"
+    >
+    </div>
+    <br>
+    <div style="width: 100px; height: 100px;"
+    [@wildState]="wildState">
+    </div>
+    <hr>
+    <div class="col-xs-12">
+        <input type="text" #input>
+        <button class="byn btn-primary" (click)="onAdd(input.value)">Add item! </button>
+    </div>
+    <hr>
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item" 
+            (click)="onDelete(item)" 
+            [@list1]="list1"
+            *ngFor="let item of list">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item" 
+            (click)="onDelete(item)" 
+            [@list2]
+            *ngFor="let item of list">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
