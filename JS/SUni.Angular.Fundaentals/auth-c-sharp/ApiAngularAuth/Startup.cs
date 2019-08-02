@@ -30,8 +30,12 @@ namespace ApiAngularAuth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookStoreContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
+            services.AddDbContext<BookStoreContext>(opt => opt
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
+
             services.AddCors();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opt => opt.TokenValidationParameters = new TokenValidationParameters
                 {

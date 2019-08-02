@@ -16,5 +16,7 @@ namespace ApiAngularAuth.Models.Data
         public byte[] Password { get; set; }
 
         public byte[] Salt { get; set; }
+
+        public virtual ICollection<Book> Books { get; set; } = new HashSet<Book>();
     }
 }
