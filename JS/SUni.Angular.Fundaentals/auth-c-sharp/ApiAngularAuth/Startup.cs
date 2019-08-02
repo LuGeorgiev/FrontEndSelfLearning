@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ApiAngularAuth.Data;
+using ApiAngularAuth.Repositories;
+using ApiAngularAuth.Repositories.Contracts;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +36,7 @@ namespace ApiAngularAuth
             services.AddDbContext<BookStoreContext>(opt => opt
                     .UseLazyLoadingProxies()
                     .UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
+            services.AddScoped<IAuthRepository, AuthRepository>();
 
             services.AddCors();
             services.AddAutoMapper(typeof(Startup));
