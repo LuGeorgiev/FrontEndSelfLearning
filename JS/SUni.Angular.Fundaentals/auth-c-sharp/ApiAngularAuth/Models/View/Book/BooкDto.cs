@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiAngularAuth.Models.View.Book
 {
-    public class BoolDto
+    public class BookDto
     {
         [Required]
         public int Id { get; set; }
