@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,8 @@ namespace ApiAngularAuth.Models.Data
         public int Id { get; set; }
 
         public string Isbn { get; set; }
+
+        public int Quantity { get; set; }
 
         public string Title { get; set; }
 
@@ -23,8 +26,9 @@ namespace ApiAngularAuth.Models.Data
 
         public decimal? Price { get; set; }
 
-        public virtual string UserId { get; set; }
+        public virtual Guid UserId { get; set; }
 
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }

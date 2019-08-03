@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiAngularAuth.Migrations
 {
     [DbContext(typeof(BookStoreContext))]
-    [Migration("20190802181727_Initial")]
-    partial class Initial
+    [Migration("20190803071330_CollectioNameChaged")]
+    partial class CollectioNameChaged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,18 +50,24 @@ namespace ApiAngularAuth.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<int>("Quantity");
+
                     b.Property<string>("Title")
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
+                    b.Property<Guid>("UserId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Books");
                 });
 
             modelBuilder.Entity("ApiAngularAuth.Models.Data.User", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id");
 
@@ -83,6 +89,14 @@ namespace ApiAngularAuth.Migrations
                     b.HasAlternateKey("Email");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ApiAngularAuth.Models.Data.Book", b =>
+                {
+                    b.HasOne("ApiAngularAuth.Models.Data.User", "User")
+                        .WithMany("UserBooks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

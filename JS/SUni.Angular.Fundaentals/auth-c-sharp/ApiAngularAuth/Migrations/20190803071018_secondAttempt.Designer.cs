@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiAngularAuth.Migrations
 {
     [DbContext(typeof(BookStoreContext))]
-    [Migration("20190802182828_AddBookCollectionToUser")]
-    partial class AddBookCollectionToUser
+    [Migration("20190803071018_secondAttempt")]
+    partial class secondAttempt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,11 +50,13 @@ namespace ApiAngularAuth.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<int>("Quantity");
+
                     b.Property<string>("Title")
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
-                    b.Property<string>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -65,7 +67,7 @@ namespace ApiAngularAuth.Migrations
 
             modelBuilder.Entity("ApiAngularAuth.Models.Data.User", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id");
 
@@ -93,7 +95,8 @@ namespace ApiAngularAuth.Migrations
                 {
                     b.HasOne("ApiAngularAuth.Models.Data.User", "User")
                         .WithMany("Books")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

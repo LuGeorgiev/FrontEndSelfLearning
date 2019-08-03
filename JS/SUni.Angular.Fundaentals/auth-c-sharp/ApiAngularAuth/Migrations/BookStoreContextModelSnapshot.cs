@@ -48,11 +48,13 @@ namespace ApiAngularAuth.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<int>("Quantity");
+
                     b.Property<string>("Title")
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
-                    b.Property<string>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -63,7 +65,7 @@ namespace ApiAngularAuth.Migrations
 
             modelBuilder.Entity("ApiAngularAuth.Models.Data.User", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id");
 
@@ -90,8 +92,9 @@ namespace ApiAngularAuth.Migrations
             modelBuilder.Entity("ApiAngularAuth.Models.Data.Book", b =>
                 {
                     b.HasOne("ApiAngularAuth.Models.Data.User", "User")
-                        .WithMany("Books")
-                        .HasForeignKey("UserId");
+                        .WithMany("UserBooks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

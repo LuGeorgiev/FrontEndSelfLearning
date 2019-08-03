@@ -4,6 +4,7 @@ using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ApiAngularAuth.Common.Mapping
@@ -12,10 +13,10 @@ namespace ApiAngularAuth.Common.Mapping
     {
         public AutoMapperProfile()
         {
-            CreateMap<LoginDto, User>();
-            CreateMap<RegisterDto, User>();
-
-
+            CreateMap<LoginDto, User>()
+                .ForMember(x =>x.Password, opt => opt.MapFrom(x=>Encoding.UTF8.GetBytes(x.Password)));
+            CreateMap<RegisterDto, User>()
+                .ForMember(x => x.Password, opt => opt.MapFrom(x => Encoding.UTF8.GetBytes(x.Password)));
         }
     }
 }

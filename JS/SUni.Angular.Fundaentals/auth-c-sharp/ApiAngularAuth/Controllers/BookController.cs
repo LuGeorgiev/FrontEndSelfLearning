@@ -22,7 +22,7 @@ namespace ApiAngularAuth.Controllers
         }
 
         [HttpGet]
-        private async Task<IActionResult> GetBooks()
+        public async Task<IActionResult> GetBooks()
         {
             var data = await db.Books.ToListAsync();
 

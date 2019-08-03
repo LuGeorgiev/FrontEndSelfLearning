@@ -18,16 +18,6 @@ namespace ApiAngularAuth.Data
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Book> Books { get; set; }
 
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder
-        //            .UseSqlServer(Configuration.ConnectionString);
-        //    }
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>(ent => 
@@ -78,8 +68,7 @@ namespace ApiAngularAuth.Data
                 .HasMaxLength(128);
 
                 ent.Property(x => x.Salt)
-                .HasMaxLength(128);
-              
+                .HasMaxLength(128);              
             });
 
         }

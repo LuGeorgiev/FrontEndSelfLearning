@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +8,8 @@ namespace ApiAngularAuth.Models.Data
 {
     public class User
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        
+        public Guid Id { get; set; }
 
         public string  FullName { get; set; }
 
@@ -17,6 +19,6 @@ namespace ApiAngularAuth.Models.Data
 
         public byte[] Salt { get; set; }
 
-        public virtual ICollection<Book> Books { get; set; } = new HashSet<Book>();
+        public virtual ICollection<Book> UserBooks { get; set; }
     }
 }

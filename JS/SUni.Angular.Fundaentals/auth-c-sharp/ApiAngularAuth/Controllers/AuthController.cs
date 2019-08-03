@@ -41,7 +41,7 @@ namespace ApiAngularAuth.Controllers
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Email)
             };
 
@@ -79,7 +79,16 @@ namespace ApiAngularAuth.Controllers
                 return BadRequest("Email already exists!");
             }
 
-            var userToCreate = this.mapper.Map<User>(model);
+            User userToCreate;
+            try
+            {
+                userToCreate = this.mapper.Map<User>(model);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
             var createedUser = await this.authRepo.Register(userToCreate, model.Password);
 
             if (createedUser == null)
