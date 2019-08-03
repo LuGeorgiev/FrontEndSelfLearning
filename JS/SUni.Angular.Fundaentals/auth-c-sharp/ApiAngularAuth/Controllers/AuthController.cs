@@ -51,7 +51,7 @@ namespace ApiAngularAuth.Controllers
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(1),
-                SigningCredentials = creds                
+                SigningCredentials = creds
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -68,7 +68,7 @@ namespace ApiAngularAuth.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto model)
         {
-            if (! this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.BadRequest("Inavalid data");
             }
@@ -79,16 +79,8 @@ namespace ApiAngularAuth.Controllers
                 return BadRequest("Email already exists!");
             }
 
-            User userToCreate;
-            try
-            {
-                userToCreate = this.mapper.Map<User>(model);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
+
+            var userToCreate = this.mapper.Map<User>(model);
             var createedUser = await this.authRepo.Register(userToCreate, model.Password);
 
             if (createedUser == null)

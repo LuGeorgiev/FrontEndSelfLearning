@@ -47,7 +47,9 @@ namespace ApiAngularAuth
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    //ValidIssuer = "https://localhost:44383/",
+                    //ValidAudience = "https://localhost:44383/"
                 });
 
 
@@ -70,9 +72,9 @@ namespace ApiAngularAuth
             app.UseCors(x => x.AllowAnyOrigin()
                             .AllowAnyHeader()
                             .AllowAnyMethod());
-            app.UseAuthentication();
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

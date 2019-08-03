@@ -1,4 +1,6 @@
 ﻿using ApiAngularAuth.Data;
+using ApiAngularAuth.Models.View.Book;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,19 +16,22 @@ namespace ApiAngularAuth.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly BookStoreContext db; 
+        private readonly BookStoreContext db;
+        private readonly IMapper mapper;
 
-        public BookController(BookStoreContext db)
+        public BookController(BookStoreContext db, IMapper mapper)
         {
             this.db = db;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetBooks()
         {
             var data = await db.Books.ToListAsync();
+            var result = this.mapper.Map<IEnumerable<BookDto>>(data);
 
-            return this.Ok(data);
+            return this.Ok(result);
         }
 
     }

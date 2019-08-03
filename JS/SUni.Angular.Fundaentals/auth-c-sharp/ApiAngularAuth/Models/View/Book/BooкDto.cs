@@ -20,6 +20,8 @@ namespace ApiAngularAuth.Models.View.Book
         [Required]
         public string Author { get; set; }
 
+        public int Quantity { get; set; }
+
         [Required]
         public string Description { get; set; }
 
