@@ -18,8 +18,9 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS ,HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
