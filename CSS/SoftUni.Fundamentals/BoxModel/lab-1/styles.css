@@ -1,0 +1,129 @@
+/* pictures from unsplash.com */
+/* europiana.eu */
+
+@import url('./typography.css');
+body {
+    padding: 2rem;
+}
+
+.site {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.site-header {
+    border-bottom: 4px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem; 
+}
+
+.site-header a {
+    color: #000;
+    text-decoration: none;
+}
+
+.site-header nav {
+
+}
+
+.site-header nav ul { 
+    
+}
+
+.site-header nav li {
+    display: inline-block;
+    /* margin-right: 0.5rem; */
+
+}
+
+.site-header nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 0.0rem 0.1rem;
+    border: 1px solid #999;   
+}
+
+.site-header nav a:focus,
+.site-header nav a:hover {
+    border-color: #000;
+    background: #000;
+    color: #FFF;
+    outline: none;
+}
+
+.site-footer {
+    border-top: 4px solid #333;
+    padding-top: 1rem;
+    margin-top: 2rem; 
+}
+
+/*
+* Layout
+*/
+
+.site-content {
+    /* border: 4px solid #F00; */
+}
+
+.main-content,
+.main-sidebar {
+ display: inline-block;
+}
+
+.main-content {
+    /* border: 4px solid #0F0; */
+    width: 65%;
+    padding-right: 2rem; 
+}
+
+.main-sidebar {
+    /* border: 4px solid #00F; */
+    width: 25%;
+    vertical-align: top;
+    padding-left: 2rem; 
+}
+
+.main-sidebar ul {
+    padding: 1rem;
+    padding-right: 0;
+    padding-top: 0;  
+}
+
+.main-sidebar > section {
+    padding-bottom: 1.5rem; 
+}
+article.post {
+    padding-bottom: 3rem;
+}
+
+article.post img {
+    display: block;
+    /* width: 100%; */
+    max-width: 100%;
+    height: auto;
+}
+
+article.post section.image {
+    overflow: hidden;
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 0.6rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+article.post section.image:before {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+    background: #F00;
+}
+
+article.post section.image img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
