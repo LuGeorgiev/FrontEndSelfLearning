@@ -1,0 +1,91 @@
+/*
+* Typography global styles
+*/
+html {
+    /* font-size: 16px;
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font: normal 16px/1.5 Georgia serif;
+}
+
+body {
+    /* font-size: inherit;
+    line-height: inherit;
+    font-family: inherit; */
+    font:inherit;
+}
+
+p, ul, ol {
+    padding-bottom: 1.2rem;
+}
+
+ul, ol {
+    padding-left: 2rem;
+}
+
+li ul, li ol {
+    padding-top: 0.5rem;
+}
+
+ul li {
+    list-style: circle;
+}
+
+ul li li {
+    list-style: square;
+}
+
+blockquote {
+    padding-left: 2rem;
+    line-height: 1.8;
+
+}
+
+blockquote p:not(:last-child) {
+    font-style: italic; 
+}
+blockquote p:first-child:before{
+    display: inline-block;
+    content: '"';
+    font-size: 2rem;
+    line-height: 1;
+    padding-right: 1rem;
+}
+
+blockquote p:nth-last-child(2):after{
+    display: inline-block;
+    content: '"';
+    font-size: 2rem;
+    line-height: 0;
+    padding-left: 1rem;
+}
+
+blockquote p:last-child {
+    font-weight: bold;
+    text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    padding-bottom: 0.3em;
+    padding-top: 0.5em;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.6rem;
+}
+h4 {
+    font-size: 1.4rem;
+}
+h5 {
+    font-size: 1.2rem;
+}
+h6 {
+    font-size: 1rem;
+}
