@@ -15,7 +15,7 @@ export class BookService {
   getBooks():Observable<Book[]>{
     return this.http.get<Book[]>(this.apiUrl + 'book')
       .pipe(
-        tap(_ =>this.log('fetch books')),
+        tap(_ => this.log('fetch books')),
         catchError(this.handleError('getBooks',[]))
       );
   }

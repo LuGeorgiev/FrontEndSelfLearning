@@ -15,9 +15,10 @@ import { Router } from '@angular/router';
     constructor(private router:Router) { } 
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const token = localStorage.get('token');
-
+        const token = localStorage.getItem('token');
+        debugger;
         if (token) {
+            debugger;
            req = req.clone({
                setHeaders:{
                    'Authorization':'Bearer' + 'token'
@@ -25,6 +26,7 @@ import { Router } from '@angular/router';
            });
         }
         if (!req.headers.has('Content-type')) {
+            debugger;
             req = req.clone({
                 setHeaders:{
                     'content-type':'application/json'
