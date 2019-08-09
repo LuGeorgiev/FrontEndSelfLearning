@@ -1,0 +1,28 @@
+.ar-image-container {
+    /* border-left:10px solid red; */
+    background: #0F0;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.5);
+}
+
+.ar-image-container:before {
+    display: block;
+    content: '';
+    /* image if 16/6 now */
+    padding-top: 56.25%;
+    background: #00F;
+}
+
+.ar-image-container img {
+    display: block;
+    /* display: none; */
+    width: 100%;
+    height: auto;
+    position: absolute;
+    /* following two lines are to center teh picture into container no mettar what are the pic dimentions*/
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
