@@ -1,0 +1,43 @@
+body{
+    padding: 2rem;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background: #900; 
+    padding: 2rem;
+
+    /* cuts elemnts that are outside of teh box */
+    overflow: hidden; 
+}
+.box {
+    width: 33.3%;
+    height: 300px;
+    
+    /* padding: 1rem; */
+    /* background: black; */
+    margin-bottom: 1rem;
+
+    /* outline is not included in the dimentions, pading and margins are adedd to dimentions */
+    outline: 4px solid black;
+    color: #FFF;
+    float: left;
+    overflow: hidden;
+}
+
+.cleaner {
+    clear: both;
+}
+
+article {
+    background: #F00;
+}
+
+.box:hover {
+    background: #34d34faf;
+
+}

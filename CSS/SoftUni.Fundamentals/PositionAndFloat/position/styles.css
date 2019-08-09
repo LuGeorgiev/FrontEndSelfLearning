@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+ padding: 2rem;
+}
+
+.container {
+    background: #F00;
+    padding: 2rem;
+    /* 80Viewport height = 80 */
+    height: 900vh;
+    position: relative;
+}
+
+.box {
+    width: 30vw;
+    height: 30vh;
+    overflow: hidden;
+
+    background: #00F;
+    color: #FFF;
+    padding: 2rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
