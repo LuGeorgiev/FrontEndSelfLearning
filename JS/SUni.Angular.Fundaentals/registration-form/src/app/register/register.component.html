@@ -66,7 +66,8 @@
               <option value="Other">Other</option>
             </select>
           </div>
-          <div class="alert alert-danger" *ngIf="form?.controls.jobTitle?.touched && form?.controls.jobTitle?.errors?.required">
+          <div class="alert alert-danger" *ngIf="form?.controls.jobTitle?.touched 
+                                            && form?.controls.jobTitle?.errors?.required">
                 This field is required!
           </div>
           <div ngModelGroup="passwords">
@@ -74,17 +75,18 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <input name="password" class="form-control" placeholder="Create password" type="password" 
+                <input name="password" class="form-control" placeholder="Create password" type="password"                 
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{3,16}$"
                 required
                 ngModel>
+                <!-- password is only letters and digits -->
               </div>
               <div class="alert alert-danger" *ngIf="form?.controls.passwords?.controls.password?.touched 
                                                     && form?.controls.passwords?.controls.password?.errors?.required">
                     This field is required!
               </div>
-              <div class="alert alert-danger" *ngIf="form?.controls.passwords?.controls.password?.pattern">
-                    Password should contain digits and chars
+              <div class="alert alert-danger" *ngIf="form?.controls.passwords?.controls.password?.errors?.pattern">
+                    Password should contain digits and chars from 3 to 16 symbols
               </div>
               <div class="form-group input-group">
                 <div class="input-group-prepend">
@@ -94,13 +96,22 @@
                 required 
                 ngModel>
               </div>
-              <div class="alert alert-danger" *ngIf="form?.controls.passwords?.controls.confirmPassword?.touched 
-                                                    && form?.controls.passwords?.controls.confirmPassword?.errors?.required">
-                    This field is required!
+              <div class="alert alert-danger" *ngIf="form?.controls.passwords?.controls.password.value 
+                                                    != form?.controls.passwords?.controls.confirmPassword?.value">
+                    Password and confirm password should be the same!
               </div>
           </div>
+          <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-image"></i> </span>
+                </div>
+            <input name="imageUrl" class="form-control" placeholder="Image url" type="url" appImageUrlValid required ngModel>
+          </div>
+          <div class="alert alert-danger" *ngIf="form?.errors?.image">
+              Image link not valid!
+          </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid"> Create Account </button>
           </div>
           <p class="text-center">Have an account? <a href="">Log In</a> </p>
         </form>
