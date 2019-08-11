@@ -42,7 +42,7 @@
               <option value="{{number}}" *ngFor="let number of phonePrefix">{{number}}</option>
             </select>
             <input name="phoneNumber" class="form-control" placeholder="Phone number" type="text" 
-            pattern="\d{9}"
+            pattern="^[\d]{9}$"
             required
             ngModel>
           </div>
