@@ -1,0 +1,60 @@
+.site-content {
+    width: 80rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.site-content::after {
+    
+}
+
+
+.main-content {
+    flex: 1 1 56rem;
+}
+
+.main-sidebar {
+    flex:  1 1 24rem;
+    display: flex;
+    flex-wrap: wrap;
+}   
+
+
+.main-sidebar > section {
+    flex: 1 1 19rem;
+}
+article.post {
+    padding-bottom: 3rem;
+}
+
+article.post img {
+    display: block;
+    /* width: 100%; */
+    max-width: 100%;
+    height: auto;
+}
+
+article.post section.image {
+    overflow: hidden;
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 0.6rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+article.post section.image:before {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+    background: #F00;
+}
+
+article.post section.image img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

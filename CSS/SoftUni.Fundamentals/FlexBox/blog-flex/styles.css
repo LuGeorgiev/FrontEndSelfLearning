@@ -1,0 +1,26 @@
+/* pictures from unsplash.com */
+/* europiana.eu */
+
+@import url('./typography.css');
+@import url('./navigation.css');
+@import url('./elements.css');
+@import url('./layout.css');
+
+body {
+    padding: 2rem;
+}
+
+.site {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+
+
+.site-footer {
+    border-top: 4px solid #333;
+    padding-top: 1rem;
+    margin-top: 2rem; 
+}
+
+

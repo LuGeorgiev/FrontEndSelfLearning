@@ -1,0 +1,88 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+@import url('./typography.css');
+
+body {
+    padding: 4rem;
+    width: 80rem;
+}
+
+.cards-list{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25rem;
+    margin-bottom: 5%;
+    border: 1px solid #CCC;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0, 0.5rem);
+}
+
+.card-media {
+
+}
+
+.image-main {
+    background: #DDD;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-main:after{
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+}
+
+.image-main img {
+    opacity: 1;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-content{
+    flex-grow: 1;
+    padding: 1rem 1.5rem;
+    border: solid #CCC;
+    border-width: 1px 0;
+}
+
+.card-content-inner p:last-child{
+    padding: 0;
+}
+
+.card-content .category {
+    display: block;
+    color: orange;
+    text-decoration: none;
+}
+
+.card-footer {
+     /* border-top: 1px solid #CCC; */
+     display: flex;
+}
+
+.card-footer a {
+    flex-grow: 1;
+    display: block;
+    padding: 0.5em 1em;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+}

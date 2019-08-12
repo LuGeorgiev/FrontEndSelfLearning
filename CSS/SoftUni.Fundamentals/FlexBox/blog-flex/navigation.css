@@ -1,0 +1,76 @@
+.site-header {
+    border-bottom: 4px solid #333;
+    padding-bottom: 1rem 0;
+    margin-bottom: 2rem; 
+}
+
+.site-header a {
+    color: #000;
+    text-decoration: none;
+}
+
+.site-header nav {
+}
+
+.site-header nav ul { 
+    background: rgba(0,0,0,0.8);
+}
+
+.site-header nav ul::after { 
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+}
+
+.site-header nav li {
+    display: block;
+    position: relative;
+}
+
+.site-header nav > ul {
+   display: flex;
+}
+/*first lvl LIs*/
+.site-header nav > ul > li {
+    
+}
+
+/*second lvl*/
+.site-header nav > ul ul {
+    display: none;
+    width: 10rem;
+    top: 100%; 
+    left: 0;
+    z-index: 1000;
+}
+
+/*third lvl and all kevels afterwards*/
+.site-header nav > ul > li > ul > li  ul{
+    left: 100%;
+    top: 0;
+}
+
+.site-header nav li:hover {
+
+}
+
+.site-header nav li:hover > ul {
+    display: block;    
+    /* border: 1px solid red; */
+}
+
+.site-header nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 0.0rem 0.1rem; 
+}
+
+.site-header nav li:hover > a ,
+.site-header nav a:focus ,
+.site-header nav a:hover {
+    border-color: #FFF;
+    background: #F00;
+    color: #FFF;
+    outline: none;
+}
