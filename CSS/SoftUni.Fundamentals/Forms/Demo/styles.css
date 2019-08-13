@@ -1,0 +1,21 @@
+
+@import url('./forms.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font: 16px/1.5 Georgie, serif;
+}
+
+body {
+    padding: 2rem;
+}
+
+body, input {
+    font: inherit;
+    /* background: #000; */
+}

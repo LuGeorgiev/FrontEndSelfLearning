@@ -1,0 +1,50 @@
+fieldset {
+    border: 2px solid #CCC;
+    padding: 1.5em 2em;
+}
+
+fieldset + fieldset {
+    margin-top: 2em;
+}
+
+fieldset p {
+    padding-bottom: 1em;
+}
+
+fieldset p.submit {
+    padding-top: 0.5em;
+}
+
+legend {
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+select {
+    background: url('./check-solid.svg') 50% center no-repeat;
+    background-size: 0.5rem auto; 
+}
+
+select,
+input {
+    display: block;
+    border: 2px solid #CCC;
+    padding: 0.2em;
+    background: #FFF;
+    border-radius: 0.3em;
+    width: 100%;    
+
+    /* resets browser styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="submit"] {
+    width: auto;
+    background: #369;
+    color: #FFF;
+    border-color: #258;
+    cursor: pointer;
+}
