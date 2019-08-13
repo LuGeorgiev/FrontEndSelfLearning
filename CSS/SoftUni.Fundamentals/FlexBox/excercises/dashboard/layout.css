@@ -1,0 +1,79 @@
+
+body {
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    background: #000;
+
+    flex-grow: 1;
+    display: flex;
+}
+
+.dash-main {
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    position: fixed;
+    overflow: hidden;
+    width: 10rem;
+}
+
+nav.dash-main-nav {
+    flex: 0 0 10rem;
+    overflow: hidden;
+}
+
+.dashboard .dash-main {
+}
+
+.dash-header {
+    display: flex;
+    align-items: center;
+}
+
+.dash-content {
+    padding: 2rem;
+    box-shadow: 0 0 0.5rem 0 rgba(255,0,0,0.5) inset;
+    
+    background: #FFF;
+    flex-grow: 1;
+}
+
+.dash-footer {
+    display: flex;
+}
+
+
+/*
+* Elements
+*/
+
+.credit {
+    padding: 0.5rem 1rem;
+}
+
+.credit,
+.user-profile {
+    margin-left: auto;
+}
+
+.user-profile a {
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 0.4em;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile a:hover {
+    background:green;
+}

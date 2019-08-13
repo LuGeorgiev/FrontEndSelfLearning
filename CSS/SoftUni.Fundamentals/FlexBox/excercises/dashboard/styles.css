@@ -1,0 +1,51 @@
+@import url('./typography.css');
+@import url('./layout.css');
+
+.menu a,
+.dash-title {
+    padding: 0.5rem 1rem;
+    
+}
+
+.menu a {
+    white-space: nowrap;
+    text-overflow: ellipsis;  
+    overflow: hidden; 
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+}
+
+.menu li {
+    list-style-type: none;
+    display: block;
+}
+
+li > a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.dash-main-nav {
+    color: #FFF;
+    background: #222;
+}
+
+.dash-footer,
+.dash-header {
+    color: #FFF;
+    background: #444;
+    line-height: 1;
+}
+
+.menu a.fas,
+.menu a.far {
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.menu a.fas:before,
+.menu a.far::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-right: 0.5rem;;
+}
