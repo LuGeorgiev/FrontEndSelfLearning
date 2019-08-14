@@ -15,7 +15,7 @@ body {
     padding: 2rem;
 }
 
-body, input {
+body, input, select, legend {
     font: inherit;
     /* background: #000; */
 }

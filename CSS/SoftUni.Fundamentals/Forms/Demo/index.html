@@ -24,37 +24,50 @@
             <p>
                 <label for="field_email">Last Name</label>
                 <input type="email" id="field_email" name="email" placeholder="e.g. ivan.ivanov@gmail.com" required="required">
+            </p>           
+        </fieldset>        
+        <fieldset>
+            <legend>Feedback</legend>
+            <p>
+                <label for="field_age">age</label>
+                <select name="age" id="field_age">
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="21">21</option>
+                    <option value="21">21</option>
+                    <option value="90">90</option>
+                </select>
             </p>
-            <p class="submit">
-                <input type="submit" value="Update">
+            <p>
+                <label for="field_last_name">Last Name</label>
+                <input type="text" id="field_last_name" name="last_name" placeholder="e.g. Petrov">
+            </p>
+            <p>
+                <label for="field_email">Last Name</label>
+                <input type="email" id="field_email" name="email" placeholder="e.g. ivan.ivanov@gmail.com" required="required">
             </p>
         </fieldset>
-
         <fieldset>
-                <legend>Feedback</legend>
-                <p>
-                    <label for="field_age">age</label>
-                    <select name="age" id="field_age">
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="21">21</option>
-                        <option value="21">21</option>
-                        <option value="90">90</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="field_last_name">Last Name</label>
-                    <input type="text" id="field_last_name" name="last_name" placeholder="e.g. Petrov">
-                </p>
-                <p>
-                    <label for="field_email">Last Name</label>
-                    <input type="email" id="field_email" name="email" placeholder="e.g. ivan.ivanov@gmail.com" required="required">
-                </p>
-                <p class="submit">
-                    <input type="submit" value="Update">
-                </p>
-            </fieldset>
+            <legend>Login Information</legend>
+            <p class="icon">
+                <label for="field_username">Username</label>
+                <span class="input-wrapper">
+                    <input type="text" id="field_username" name="username" placeholder="e.g. vanka89">
+                    <i class="fas fa-user"></i>
+                </span>
+            </p>
+            <p class="icon">
+                <label for="field_password">Last Name</label>
+                <span class="input-wrapper">
+                    <input type="password" id="field_password" name="password" placeholder="Password">
+                    <i class="fas fa-user-secret"></i>
+                </span>
+            </p>           
+        </fieldset>
+        <p class="submit">
+            <input type="submit" value="Update">
+        </p>
     </form>
 </body>
 </html>
