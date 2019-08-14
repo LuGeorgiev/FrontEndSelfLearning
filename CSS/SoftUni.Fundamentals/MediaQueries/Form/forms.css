@@ -1,0 +1,108 @@
+fieldset {
+    border: 2px solid #CCC;
+    padding: 1.5em 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset + fieldset {
+    margin-top: 2em;
+}
+
+fieldset p {
+    padding-bottom: 1em;
+}
+
+p.submit {
+    padding-top: 0.5em;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+legend {
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+select {
+    background: url('./check-solid.svg') 98% center no-repeat;
+    background-size: 0.5rem auto; 
+}
+
+select,
+input {
+    display: block;
+    
+    width: 100%;    
+    outline: none;
+    border: none;
+
+    /* resets browser styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select:focus,
+input:focus {
+    border-color: #060;
+}
+
+input[type="submit"] {
+    width: auto;
+    border: 2px solid #CCC;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    background: #369;
+    border-color: #258;
+    cursor: pointer;
+    color: #FFF;
+    /* position: relative; */
+}
+
+@media (max-width: 600px){
+    inputp[type="submit"]{
+        font-size: 1.2em;
+        padding: 0.8em 1.2em;
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;    
+    padding: 0.5em 1em;
+    position: relative;
+}
+
+
+.input-wrapper i {
+    display: flex;
+    align-items: center;
+    border: 2px solid #CCC;
+    border-radius: 0.3em;
+    /* color: #FFF; */
+    background: #FFF;
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    z-index: -1;
+
+}
+
+.input-wrapper i::before{
+    padding: 0 0.4em;
+}
+
+.input-wrapper input {
+    order: 2;
+}
+
+input:focus + i {
+    color: #47a;
+    border-color: #47a;
+}
+
+/* .icon .input-wraper select, */
+.icon .input-wraper input {
+    margin-left: 1em;
+}

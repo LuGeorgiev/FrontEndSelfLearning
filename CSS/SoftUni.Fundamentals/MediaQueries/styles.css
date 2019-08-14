@@ -1,0 +1,28 @@
+
+
+body {
+    background: #F00;
+}
+
+@media (min-width: 600px){
+    body {
+        background: #0FF;
+    }
+    p::before {
+        display: block;
+        content: 'Hey, teh screen is larger than 600px'
+    }
+}
+
+@media (min-width: 1200px){
+    body {
+        background: #0F0;
+        font-size: 24px;
+        color: red;
+    }
+    
+    p::before {
+        display: block;
+        content: 'Hey, teh screen is larger than 1200px'
+    }
+}
