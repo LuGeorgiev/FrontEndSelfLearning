@@ -1,0 +1,119 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: 90vh;
+    background: #AAA;
+    padding: 4rem;
+    padding-bottom: 6rem;
+    columns: #FFF;
+}
+
+.header-section-top{
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+.header-section-bottom {
+    color:#FFF;
+}
+
+.header-section-bottom p {
+    padding-bottom: 1rem;
+}
+
+.header-section-bottom hgroup h1 {
+    font-size: 4rem;
+}
+
+.header-section-bottom hgroup h6{
+    text-transform: uppercase;
+    color: rgb(246, 188, 18);
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.header-section-bottom hgroup + p::before{
+    display: block; 
+    content: '';
+    width: 2rem;
+    height: 2px;
+    background: rgb(246, 188, 18);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.site-title {
+    background: url('../images/logo.svg') left center no-repeat;
+    width: 4rem;
+    color: #FFF;
+}
+
+
+.site-title a {
+    display: block;
+    padding: 0;
+    text-indent: -300vw;
+    overflow: hidden;
+}
+
+.site-header label {
+    color: #FFF;
+    padding-left: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*Main nav*/
+.main-nav{
+    display: none;
+    margin-left: auto;
+}
+
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    display: block;
+    list-style:  outside none;
+}
+
+.main-nav a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    padding: 0 0.5rem;
+}
+
+#toggle-nav {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#toggle-nav:checked + .site-header .main-nav {
+    display: block;
+}
+
+.site-header label i.fa-times{
+    display: none;
+}
+
+#toggle-nav:checked + .site-header label i.fa-times {
+    display: block;
+}
+
+#toggle-nav:checked + .site-header label i.fa-bars {
+    display: none;
+}
