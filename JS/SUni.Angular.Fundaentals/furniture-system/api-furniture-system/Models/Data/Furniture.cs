@@ -36,7 +36,7 @@ namespace api_furniture_system.Models.Data
 
         public string Materials { get; set; }
 
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }

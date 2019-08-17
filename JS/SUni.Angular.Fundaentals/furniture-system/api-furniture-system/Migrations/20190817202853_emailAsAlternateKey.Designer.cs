@@ -10,8 +10,8 @@ using api_furniture_system.Data;
 namespace api_furniture_system.Migrations
 {
     [DbContext(typeof(FurnitureContext))]
-    [Migration("20190814190405_initial")]
-    partial class initial
+    [Migration("20190817202853_emailAsAlternateKey")]
+    partial class emailAsAlternateKey
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,11 +27,24 @@ namespace api_furniture_system.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ImgUrl")
+                        .IsRequired();
+
+                    b.Property<string>("Make")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Materials");
+
                     b.Property<string>("Model")
                         .IsRequired()
-                        .HasMaxLength(100);
+                        .HasMaxLength(50);
 
-                    b.Property<Guid>("UserId");
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 
@@ -42,14 +55,14 @@ namespace api_furniture_system.Migrations
 
             modelBuilder.Entity("api_furniture_system.Models.Data.User", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<string>("NickName")
-                        .HasMaxLength(50);
+                    b.Property<string>("NickName");
 
                     b.Property<byte[]>("Password")
                         .IsRequired();
@@ -58,6 +71,8 @@ namespace api_furniture_system.Migrations
                         .IsRequired();
 
                     b.HasKey("Id");
+
+                    b.HasAlternateKey("Email");
 
                     b.ToTable("Users");
                 });

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api_furniture_system.Data;
 
 namespace api_furniture_system.Migrations
 {
     [DbContext(typeof(FurnitureContext))]
-    partial class FurnitureContextModelSnapshot : ModelSnapshot
+    [Migration("20190817202450_initialSecondStart")]
+    partial class initialSecondStart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,8 +71,6 @@ namespace api_furniture_system.Migrations
                         .IsRequired();
 
                     b.HasKey("Id");
-
-                    b.HasAlternateKey("Email");
 
                     b.ToTable("Users");
                 });

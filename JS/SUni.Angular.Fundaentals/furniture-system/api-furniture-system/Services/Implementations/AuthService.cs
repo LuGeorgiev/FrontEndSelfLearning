@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api_furniture_system.Data;
 using api_furniture_system.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace api_furniture_system.Services.Implementations
 {
     public class AuthService : IAuthService
     {
-        public Task<User> Login(string email, string password)
+        private readonly FurnitureContext db;
+
+        public AuthService(FurnitureContext db)
         {
-            throw new NotImplementedException();
+            this.db = db;
+        }
+
+        public async Task<User> Login(string email, string password)
+        {
+            var user = await this.db.Users.SingleOrDefaultAsync(x => x.Email == email);
+
+            return user;
         }
 
         public Task<User> Register(User user, string password)

@@ -4,26 +4,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace api_furniture_system.Migrations
 {
-    public partial class furnitureAndUser : Migration
+    public partial class initialSecondStart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Furnitures");
-
-            migrationBuilder.DropTable(
-                name: "Users");
-        }
-
-        protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NickName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: false),
-                    NickName = table.Column<string>(maxLength: 50, nullable: true),
                     Password = table.Column<byte[]>(nullable: false),
                     Salt = table.Column<byte[]>(nullable: false)
                 },
@@ -38,8 +30,13 @@ namespace api_furniture_system.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Model = table.Column<string>(maxLength: 100, nullable: false),
-                    UserId = table.Column<Guid>(nullable: false)
+                    Make = table.Column<string>(maxLength: 50, nullable: false),
+                    Model = table.Column<string>(maxLength: 50, nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    Year = table.Column<int>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: false),
+                    Materials = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,6 +53,15 @@ namespace api_furniture_system.Migrations
                 name: "IX_Furnitures_UserId",
                 table: "Furnitures",
                 column: "UserId");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Furnitures");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }
