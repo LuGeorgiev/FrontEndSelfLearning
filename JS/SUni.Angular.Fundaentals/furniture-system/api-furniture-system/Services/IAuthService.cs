@@ -1,4 +1,5 @@
 ﻿using api_furniture_system.Models.Data;
+using api_furniture_system.Models.Dto.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace api_furniture_system.Services
 {
     public interface IAuthService
     {
-        Task<User> Register(User user, string password);
+        Task<User> RegisterAsync(RegisterModel user);
 
-        Task<User> Login(string email, string password);
+        Task<User> LoginAsync(string email, string password);
 
-        Task<bool> UserExists(string email);
+        Task<bool> UserExistsAsync(string email);
     }
 }
