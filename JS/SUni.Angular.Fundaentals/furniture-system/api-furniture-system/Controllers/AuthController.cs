@@ -1,16 +1,15 @@
 ﻿using api_furniture_system.Models.Dto.User;
 using api_furniture_system.Services;
-using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Security.Claims;
+
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace api_furniture_system.Controllers
 {
@@ -20,13 +19,11 @@ namespace api_furniture_system.Controllers
     {
         private readonly IAuthService auth;
         private readonly IConfiguration config;
-        private readonly IMapper mapper;
 
-        public AuthController(IAuthService auth, IConfiguration config, IMapper mapper)
+        public AuthController(IAuthService auth, IConfiguration config)
         {
             this.auth = auth;
             this.config = config;
-            this.mapper = mapper;
         }
 
         [HttpPost("login")]

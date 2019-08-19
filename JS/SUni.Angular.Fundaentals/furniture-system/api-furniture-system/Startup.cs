@@ -40,6 +40,7 @@ namespace api_furniture_system
             });
 
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IFurnitureService, FurnitureService>();
             services.AddCors();
             services.AddAutoMapper(typeof(Startup));
 

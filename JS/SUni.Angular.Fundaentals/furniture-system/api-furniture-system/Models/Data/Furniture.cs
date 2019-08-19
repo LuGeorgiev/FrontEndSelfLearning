@@ -41,5 +41,7 @@ namespace api_furniture_system.Models.Data
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
+
     }
 }

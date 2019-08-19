@@ -4,10 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+using static api_furniture_system.Infrastructure.Constants;
+
 namespace api_furniture_system.Models.Dto.Furniture
 {
     public class FurnitureBindingModel
-    {       
+    {
 
         [Required]
         [MaxLength(50)]
@@ -32,6 +34,10 @@ namespace api_furniture_system.Models.Dto.Furniture
         public string ImgUrl { get; set; }
 
         public string Materials { get; set; }
+
+        [Required]
+        [RegularExpression(PASSWORD_PATTERN)]
+        public string UserEmail { get; set; }
 
     }
 }
