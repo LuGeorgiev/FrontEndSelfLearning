@@ -21,6 +21,7 @@ namespace api_furniture_system.Services.Implementations
             this.mapper = mapper;
         }
 
+        //TODO check if empty collection is returned
         public async Task<IEnumerable<FurnitureViewModel>> AllAsync()
         {
             var allFurnitures = await this.db.Furnitures
@@ -78,6 +79,7 @@ namespace api_furniture_system.Services.Implementations
             .Map<FurnitureViewModel>(await this.db.Furnitures
                                             .FirstOrDefaultAsync(x => x.Id == furnitureId));
 
+        //TODO check if empty collection is returned
         public async Task<IEnumerable<FurnitureViewModel>> GetMineAsync(int userId)
         => this.mapper
             .Map<IEnumerable<FurnitureViewModel>>(await this.db.Furnitures
