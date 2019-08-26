@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace api_furniture_system.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class FurnitureController : ControllerBase
     {
         private readonly IFurnitureService furnitureService;
@@ -44,9 +44,8 @@ namespace api_furniture_system.Controllers
 
             return this.Ok(allFurnitures);
         }
-
-        //[Route("{id:int}")]
-        [HttpGet("create")]
+        
+        [HttpGet("details/{id}")]
         public async Task<IActionResult> Details(int id)
         {
             if (id <= 0)
@@ -64,7 +63,7 @@ namespace api_furniture_system.Controllers
             return this.Ok(furniture);
         }
 
-        [HttpGet("mine")]
+        [HttpGet("mine/{id}")]
         public async Task<IActionResult> Mine(int id)
         {
             if (id <=0)
@@ -78,7 +77,7 @@ namespace api_furniture_system.Controllers
         }
 
         [HttpPost("delete")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete([FromBody] int id)
         {
             if (id <= 0)
             {
