@@ -13,6 +13,8 @@ import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,11 @@ import { AuthService } from './authentication/auth.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ 
     AuthService

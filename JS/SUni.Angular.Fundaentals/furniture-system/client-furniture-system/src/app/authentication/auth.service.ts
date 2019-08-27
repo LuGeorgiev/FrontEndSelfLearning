@@ -29,4 +29,10 @@ export class AuthService {
   isAuthenticated() {
     return localStorage.getItem('token') !== null;
   }
+
+  getToken(){
+    let token =  localStorage.getItem('token');
+
+    return token;
+  }
 }
