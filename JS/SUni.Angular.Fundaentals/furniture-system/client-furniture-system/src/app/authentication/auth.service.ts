@@ -3,8 +3,12 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
-  private readonly loginUrl = 'http://localhost:5000/auth/login';
-  private readonly registerUrl = 'http://localhost:5000/auth/register';
+  //default endpoints for provided back-end solution
+  // private readonly loginUrl = 'http://localhost:5000/auth/login';
+  // private readonly registerUrl = 'http://localhost:5000/auth/register';
+
+  private readonly loginUrl = 'https://localhost:44386/api/auth/login';
+  private readonly registerUrl = 'https://localhost:44386/api/auth/register';
 
   constructor(
     private http : HttpClient
