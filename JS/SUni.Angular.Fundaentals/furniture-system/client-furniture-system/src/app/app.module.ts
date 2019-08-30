@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtInterceptorService } from './jwt-interceptor.service';
+import { FurnitureAllComponent } from './furniture/furniture-all/furniture-all.component';
+import { FurnitureCreateComponent } from './furniture/furniture-create/furniture-create.component';
+import { FurnitureDetailsComponent } from './furniture/furniture-details/furniture-details.component';
+import { FurnitureUserComponent } from './furniture/furniture-user/furniture-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignupComponent,
     HomeComponent,
     DropdownDirective,
-    CollapseDirective
+    CollapseDirective,
+    FurnitureAllComponent,
+    FurnitureCreateComponent,
+    FurnitureDetailsComponent,
+    FurnitureUserComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastrModule.forRoot(),
   ],
   providers: [ 
-    AuthService
+    AuthService,
+    { provide: HTTP_INTERCEPTORS , useClass: JwtInterceptorService, multi:true }
   ],
   bootstrap: [AppComponent]
 })

@@ -19,6 +19,8 @@ export class JwtInterceptorService implements HttpInterceptor{
         Authorization: `Bearer ${token}`
       }
     });
+
+    return next.handle(jsonReq);
   }
 
 }
