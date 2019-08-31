@@ -16,7 +16,7 @@ namespace api_furniture_system.Models.Dto.User
 
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Email must be at least 3 characters")]
-        [RegularExpression(PASSWORD_PATTERN, ErrorMessage = "Mail is not valid")]
+        [RegularExpression(EMAIL_PATTERN, ErrorMessage = "Mail is not valid")]
         public string Email { get; set; }
 
         [Required]

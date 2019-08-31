@@ -35,8 +35,8 @@ namespace api_furniture_system.Models.Dto.Furniture
 
         public string Materials { get; set; }
 
-        [Required]
-        [RegularExpression(PASSWORD_PATTERN)]
+        //[Required]
+        [RegularExpression(EMAIL_PATTERN)]
         public string UserEmail { get; set; }
 
     }

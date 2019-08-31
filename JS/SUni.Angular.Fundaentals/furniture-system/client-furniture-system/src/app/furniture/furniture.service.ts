@@ -11,6 +11,8 @@ export class FurnitureService {
   constructor(private http : HttpClient) { }
 
   createFurniture(data){
-    return this.http.post<>(createF, data);
+    debugger;
+    console.log(data);
+    return this.http.post(createF, data);
   }
 }

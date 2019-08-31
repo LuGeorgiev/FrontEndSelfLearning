@@ -22,6 +22,8 @@ namespace api_furniture_system.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(FurnitureBindingModel model)
         {
+            var check = this.HttpContext.Request;
+
             if (! ModelState.IsValid)
             {
                 return BadRequest("Invalid furniture");

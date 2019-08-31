@@ -62,8 +62,14 @@ namespace api_furniture_system.Controllers
             return this.Ok(new
             {
                 token = tokenHandler.WriteToken(token),
-                email = user.Email,
-                nickName = user.NickName
+                success = true,
+                message = "You have logged successfully!",
+                user = new
+                {
+                    email = user.Email,
+                    nickName = user.NickName,
+                    isAdmin = false
+                }
             });
         }
 
