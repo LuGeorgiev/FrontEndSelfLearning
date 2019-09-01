@@ -11,7 +11,6 @@ namespace api_furniture_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class FurnitureController : ControllerBase
     {
         private readonly IFurnitureService furnitureService;
@@ -21,6 +20,7 @@ namespace api_furniture_system.Controllers
             this.furnitureService = furnitureService;
         }
 
+        [Authorize]
         [HttpPost("create")]
         public async Task<IActionResult> Create(FurnitureBindingModel model)
         {
@@ -72,6 +72,7 @@ namespace api_furniture_system.Controllers
             return this.Ok(furniture);
         }
 
+        [Authorize]
         [HttpGet("mine/{id}")]
         public async Task<IActionResult> Mine(int id)
         {
@@ -85,6 +86,7 @@ namespace api_furniture_system.Controllers
             return this.Ok(furnitures);
         }
 
+        [Authorize]
         [HttpPost("delete")]
         public async Task<IActionResult> Delete([FromBody] int id)
         {

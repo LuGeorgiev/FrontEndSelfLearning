@@ -8,6 +8,7 @@ import { SignupComponent } from './authentication/signup/signup.component';
 import { FurnitureCreateComponent } from './furniture/furniture-create/furniture-create.component';
 import { AuthGuard } from './authentication/guards/auth.guard';
 import { FurnitureAllComponent } from './furniture/furniture-all/furniture-all.component';
+import { FurnitureDetailsComponent } from './furniture/furniture-details/furniture-details.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'furniture/create', component: FurnitureCreateComponent,},
-  { path: 'furniture/all', component: FurnitureAllComponent }
+  { path: 'furniture/all', component: FurnitureAllComponent },
+  { path: 'furniture/details/:id', component: FurnitureDetailsComponent }
 ]
 
 @NgModule({
