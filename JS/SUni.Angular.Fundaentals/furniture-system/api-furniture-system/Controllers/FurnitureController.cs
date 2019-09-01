@@ -1,5 +1,6 @@
 ﻿using api_furniture_system.Models.Dto.Furniture;
 using api_furniture_system.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace api_furniture_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FurnitureController : ControllerBase
     {
         private readonly IFurnitureService furnitureService;
@@ -26,7 +28,7 @@ namespace api_furniture_system.Controllers
             {
                 return BadRequest("Invalid furniture");
             }
-            var check = this.HttpContext.Request;
+
             var email = this.User.Claims.FirstOrDefault(x => x.Type.Contains("emailaddress", StringComparison.InvariantCultureIgnoreCase));
             if (email == null)
             {
