@@ -22,7 +22,7 @@ export class FurnitureCreateComponent implements OnInit {
       year: ['',[Validators.min(1950),Validators.max(2050), Validators.required]],
       description:['',[Validators.required, Validators.minLength(10)]], 
       price: ['',[Validators.required, Validators.min(1)]],
-      image: ['',Validators.required],
+      imgUrl: ['',Validators.required],
       material:['', Validators.nullValidator]
     })
   }
