@@ -7,7 +7,7 @@
   <div class="row space-top">
       <div class="col-md-4">
           <div class="card text-white bg-primary">
-              <div class="card-body" *ngIf="furniture.imgUrl">
+              <div class="card-body" *ngIf="furniture?.imgUrl">
                   <blockquote  class="card-blockquote">
                       <img src="{{furniture.imgUrl}}" />
                   </blockquote>
@@ -15,12 +15,12 @@
           </div>
       </div>
       <div class="col-md-4">
-          <p *ngIf="furniture.make">Make: {{furniture.make}}</p>
-          <p *ngIf="furniture.model">Model: {{furniture.model}}</p>
-          <p *ngIf="furniture.year">Year: {{furniture.year}}</p>
-          <p *ngIf="furniture.description">Description: {{furniture.description}}</p>
-          <p *ngIf="furniture.price">Price: {{ furniture.price}}</p>
-          <p *ngIf="furniture.material">Material: {{furniture.material}}</p>
+          <p *ngIf="furniture?.make">Make: {{furniture.make}}</p>
+          <p *ngIf="furniture?.model">Model: {{furniture.model}}</p>
+          <p *ngIf="furniture?.year">Year: {{furniture.year}}</p>
+          <p *ngIf="furniture?.description">Description: {{furniture.description}}</p>
+          <p *ngIf="furniture?.price">Price: {{ furniture.price}}</p>
+          <p *ngIf="furniture?.material">Material: {{furniture.material}}</p>
       </div>
   </div>
 </div>

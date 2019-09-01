@@ -13,7 +13,7 @@ namespace api_furniture_system.Services
 
         Task<FurnitureViewModel> GetByIdAsync(int furnitureId);
 
-        Task<IEnumerable<FurnitureViewModel>> GetMineAsync(int userId);
+        Task<IEnumerable<FurnitureViewModel>> GetMineAsync(string userEmail);
 
         Task<bool> DeleteAsync(int furnitureId);
     }

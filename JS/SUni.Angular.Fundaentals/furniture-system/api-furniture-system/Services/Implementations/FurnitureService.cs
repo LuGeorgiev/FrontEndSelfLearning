@@ -79,10 +79,10 @@ namespace api_furniture_system.Services.Implementations
                                             .FirstOrDefaultAsync(x => x.Id == furnitureId));
 
         //TODO check if empty collection is returned
-        public async Task<IEnumerable<FurnitureViewModel>> GetMineAsync(int userId)
+        public async Task<IEnumerable<FurnitureViewModel>> GetMineAsync(string userEmail)
         => this.mapper
             .Map<IEnumerable<FurnitureViewModel>>(await this.db.Furnitures
-                                                            .Where(x => x.UserId == userId)
+                                                            .Where(x => x.User.Email == userEmail && x.IsDeleted == false)
                                                             .ToListAsync());
     }
 }

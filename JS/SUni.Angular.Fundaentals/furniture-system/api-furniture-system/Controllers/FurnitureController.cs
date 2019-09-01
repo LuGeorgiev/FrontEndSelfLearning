@@ -73,22 +73,24 @@ namespace api_furniture_system.Controllers
         }
 
         [Authorize]
-        [HttpGet("mine/{id}")]
-        public async Task<IActionResult> Mine(int id)
+        [HttpGet("mine")]
+        public async Task<IActionResult> Mine()
         {
-            if (id <=0)
+            var email = this.User.Claims
+                .FirstOrDefault(x => x.Type.Contains("emailaddress", StringComparison.InvariantCultureIgnoreCase));
+            if (email == null)
             {
-                return this.BadRequest();
+                return this.Unauthorized();
             }
 
-            var furnitures = await this.furnitureService.GetMineAsync(id);
+            var furnitures = await this.furnitureService.GetMineAsync(email.Value);
 
             return this.Ok(furnitures);
         }
 
         [Authorize]
-        [HttpPost("delete")]
-        public async Task<IActionResult> Delete([FromBody] int id)
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
             {

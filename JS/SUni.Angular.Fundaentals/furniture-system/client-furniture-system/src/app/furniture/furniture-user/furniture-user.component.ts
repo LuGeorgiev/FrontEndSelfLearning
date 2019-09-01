@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FurnitureService } from '../furniture.service';
+import { Furniture } from 'src/app/models/furniture';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-furniture-user',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FurnitureUserComponent implements OnInit {
 
-  constructor() { }
+  furniture$:Observable<Array<Furniture>>
+
+  constructor(private furnitureService: FurnitureService) { }
 
   ngOnInit() {
+    this.furniture$ = this.furnitureService.getUserFurniture();
+  }
+
+  deleteFurniture(id){
+    this.furnitureService.deleteFurniture(id).subscribe((data)=>{
+      console.log('delete ', data);
+      this.furniture$ = this.furnitureService.getUserFurniture(); 
+    });
   }
 
 }
