@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FurnitureService } from '../furniture.service';
+import { Furniture } from 'src/app/models/furniture';
 
 @Component({
   selector: 'app-furniture-details',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./furniture-details.component.css']
 })
 export class FurnitureDetailsComponent implements OnInit {
+  furniture: Furniture
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private furnitureService: FurnitureService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(data => {
+      let id = data['id'];
+      this.furnitureService.getFurniture(id)
+        .subscribe((data) =>{
+          console.log(data);
+          this.furniture = data;
+      })
+    })
   }
 
 }
