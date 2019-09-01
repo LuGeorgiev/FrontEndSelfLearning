@@ -65,8 +65,7 @@ namespace api_furniture_system.Controllers
                 success = true,
                 message = "You have logged successfully!",
                 user = new
-                {
-                    email = user.Email,
+                {                    
                     nickName = user.NickName,
                     isAdmin = false
                 }

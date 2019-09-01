@@ -23,8 +23,7 @@ export class FurnitureCreateComponent implements OnInit {
       description:['',[Validators.required, Validators.minLength(10)]], 
       price: ['',[Validators.required, Validators.min(1)]],
       image: ['',Validators.required],
-      material:['', Validators.nullValidator],
-      userEmail:[localStorage.getItem('email')]
+      material:['', Validators.nullValidator]
     })
   }
 

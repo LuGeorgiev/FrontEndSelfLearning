@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -35,8 +36,7 @@ namespace api_furniture_system.Models.Dto.Furniture
 
         public string Materials { get; set; }
 
-        //[Required]
-        [RegularExpression(EMAIL_PATTERN)]
+        [NotMapped]
         public string UserEmail { get; set; }
 
     }

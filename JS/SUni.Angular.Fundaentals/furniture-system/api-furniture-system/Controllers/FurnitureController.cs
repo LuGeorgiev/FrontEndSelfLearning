@@ -22,12 +22,17 @@ namespace api_furniture_system.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(FurnitureBindingModel model)
         {
-            var check = this.HttpContext.Request;
-
             if (! ModelState.IsValid)
             {
                 return BadRequest("Invalid furniture");
             }
+            var check = this.HttpContext.Request;
+            var email = this.User.Claims.FirstOrDefault(x => x.Type.Contains("emailaddress", StringComparison.InvariantCultureIgnoreCase));
+            if (email == null)
+            {
+                return this.Unauthorized();
+            }
+            model.UserEmail = email.Value;
 
             var createdFurniture = await this.furnitureService.CreateAsync(model);
 
