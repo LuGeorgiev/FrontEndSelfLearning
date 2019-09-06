@@ -399,3 +399,6 @@ typings/
 
 #DynamoDB Local files 
 .dynamodb/ 
+
+#Kinvey Tokens
+kinvey.tokens.
