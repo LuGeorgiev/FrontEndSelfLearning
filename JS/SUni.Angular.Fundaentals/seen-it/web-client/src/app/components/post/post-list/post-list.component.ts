@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
 import { PostService } from 'src/app/core/services/post.service';
+import { PostInfo } from '../../shared/models/post-info';
 
 @Component({
   selector: 'app-post-list',
@@ -8,7 +9,8 @@ import { PostService } from 'src/app/core/services/post.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  allPosts: Object[];
+  
+  allPosts: PostInfo[];
 
   constructor(
     private postService: PostService,
@@ -42,14 +44,4 @@ export class PostListComponent implements OnInit {
       })
   }
 
-  isAuthor(post: Object) {
-    return post['_acl']['creator'] === localStorage.getItem('userId');
-  }
-
-  deletePost(id: string) {
-    this.postService.deletePost(id)
-      .subscribe(() => {
-        this.router.navigate(['/posts']);
-      })
-  }
 }
