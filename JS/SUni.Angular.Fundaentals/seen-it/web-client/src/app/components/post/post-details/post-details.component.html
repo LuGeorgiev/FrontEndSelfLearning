@@ -1,10 +1,9 @@
 <section id="viewComments">
-  <ng-template [ngIf]="post">
-
-    <app-post-info 
+  <app-post-info
+    *ngIf="(post$ | async) as post" 
     [post]="post"
-    [desc]="post.description"></app-post-info>
-  </ng-template>
+    [desc]="post.description">
+  </app-post-info>
   <div class="post post-content">
     <form #f="ngForm" (ngSubmit)="postComment()" id="commentForm">
       <label>Comment</label>
