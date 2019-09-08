@@ -20,7 +20,8 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.route.url.subscribe((segmentArr: UrlSegment[]) => {
-      if (segmentArr.length === 1) {
+      const segment = segmentArr[0];
+      if (! segment) {
         this.allPosts$ = this.postService.getAll();          
       } else {
         this.allPosts$ = this.postService.getUserPosts();
