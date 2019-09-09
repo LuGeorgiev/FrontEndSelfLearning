@@ -1,3 +1,43 @@
-<button mat-raised-button color="primary">Click</button>
 
-<router-outlet></router-outlet>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+            <mat-nav-list>
+            <div>
+                <a [routerLink]="['/login']">
+                    <mat-icon></mat-icon>
+                </a>
+                <a [routerLink]="['/signUp']">
+                    <mat-icon></mat-icon>                
+                </a>
+                <a [routerLink]="['/user/event']">
+                    <mat-icon></mat-icon>                
+                </a>
+                <a [routerLink]="['/logout']">
+                    <mat-icon></mat-icon>
+                </a>
+            </div>
+            </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()" >
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div>
+                <a routerLink="/"> Sli.do</a>
+            </div>
+            <ul fxFlex fxLayout fxLayoutGap=10px fxLayoutAlign="end" >
+                <li><a [routerLink]="[ '/login']">Login</a></li>
+                <li><a [routerLink]="[ '/signUp']">SignUp</a></li>
+                <li><a [routerLink]="[ '/user/events']">Events</a></li>
+                <li><a [routerLink]="[ '/logout' ]">Logout</a></li>
+            </ul>
+        </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
