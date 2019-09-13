@@ -3,5 +3,18 @@
         <h1>Every Question Mattres</h1>
         <p>Wellcome to sli.do. Please, enter an event code.</p>
     </div>
-        
+    <form [formGroup]="eventForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-form-field>
+            <mat-icon matPrefix>event</mat-icon>
+            <input 
+            matInput 
+            formControlName="code" 
+            type="text" 
+            placeholder="Please, enter event code..."/>
+            <mat-error >Enter an event code.</mat-error>
+            <mat-hint>Fill me with valid code.</mat-hint>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="eventForm.invalid" type="submit">Join</button>
+    </form>
+
 </section>
