@@ -6,10 +6,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidebarListComponent } from './components/shared/sidebar-list/sidebar-list.component';
+import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarListComponent,
+    ToolbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
