@@ -3,11 +3,15 @@ a {
     color: white;
 }
 
-li {
+a:hover {
+    color: orange;
+}
+
+ul {
     list-style: none;
 }
 
-mat-sidenam-container, 
+mat-sidenav-container, 
 mat-sidenav-content,
 mat-sidenav {
     height: 100%;
@@ -15,5 +19,6 @@ mat-sidenav {
 
 mat-sidenav {
     width: 250px;
-    color: #673AB7;
+    overflow: hidden;
+    /* color: #673AB7; */
 }

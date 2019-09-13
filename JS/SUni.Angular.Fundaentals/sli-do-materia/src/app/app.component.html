@@ -3,20 +3,24 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
             <mat-nav-list>
-            <div>
-                <a [routerLink]="['/login']">
-                    <mat-icon></mat-icon>
-                </a>
-                <a [routerLink]="['/signUp']">
-                    <mat-icon></mat-icon>                
-                </a>
-                <a [routerLink]="['/user/event']">
-                    <mat-icon></mat-icon>                
-                </a>
-                <a [routerLink]="['/logout']">
-                    <mat-icon></mat-icon>
-                </a>
-            </div>
+                <div>
+                    <a mat-list-item [routerLink]="['/login']">
+                        <mat-icon>account_circle</mat-icon>
+                        Login
+                    </a>
+                    <a mat-list-item [routerLink]="['/signUp']">                        
+                        <mat-icon>face</mat-icon>
+                        SignUp                
+                    </a>
+                    <a mat-list-item [routerLink]="['/user/events']">
+                        <mat-icon>event</mat-icon>                
+                        Events
+                    </a>
+                    <a mat-list-item [routerLink]="['/logout']">
+                        <mat-icon>eject</mat-icon>
+                        Logout
+                    </a>
+                </div>
             </mat-nav-list>
     </mat-sidenav>
 
