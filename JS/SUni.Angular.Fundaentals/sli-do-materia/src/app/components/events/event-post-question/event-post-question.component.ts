@@ -14,7 +14,7 @@ export class EventPostQuestionComponent implements OnInit {
 
   ngOnInit() {
     this.postQuestionForm = this.fb.group({
-      text: [null,[Validators.required, Validators.minLength(6), Validators.maxLength(200)],[]]
+      text: ['',[Validators.required, Validators.minLength(6), Validators.maxLength(200)],[]]
     });
   }
 

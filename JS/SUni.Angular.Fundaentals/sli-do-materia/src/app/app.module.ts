@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EventLiveComponent } from './components/events/event-live/event-live.component';
 import { EventPostQuestionComponent } from './components/events/event-post-question/event-post-question.component';
 import { EventQuestionInfoComponent } from './components/events/event-question-info/event-question-info.component';
+import { MyFirebaseModule } from './firebase.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventQuestionInfoComponent } from './components/events/event-question-i
     HomeComponent,
     EventLiveComponent,
     EventPostQuestionComponent,
-    EventQuestionInfoComponent
+    EventQuestionInfoComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { EventQuestionInfoComponent } from './components/events/event-question-i
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MyFirebaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

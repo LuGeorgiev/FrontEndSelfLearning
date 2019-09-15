@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+    apiKey: "AIzaSyDBISnFzc9kNw2oPgSU1sJ4tGxVpmai2ps",
+    authDomain: "slido-workshop-adf80.firebaseapp.com",
+    databaseURL: "https://slido-workshop-adf80.firebaseio.com",
+    projectId: "slido-workshop-adf80",
+    storageBucket: "slido-workshop-adf80.appspot.com",
+    messagingSenderId: "834538929542",
+    appId: "1:834538929542:web:2d22d13040cbe50f620007"
+  }
 };
 
 /*
