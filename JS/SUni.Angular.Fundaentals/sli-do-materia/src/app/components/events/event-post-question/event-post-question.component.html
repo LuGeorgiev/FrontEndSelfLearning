@@ -1,12 +1,17 @@
-<form [formGroup]="postQuestionForm">
-    <mat-form-field appearance="fill">
-        <mat-label>Fiil question here</mat-label>
-        <input 
+<form fxLayout="column" fxLayoutAlign="center center" [formGroup]="postQuestionForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Question</mat-label>
+        <textarea 
         matInput 
         formControlName="text" 
         type="text" 
-        placeholder="Please ask a question"/>
-        <mat-icon matSuffix></mat-icon>
-        <mat-hint></mat-hint>
+        placeholder="Please ask a question..."
+        rows="5"></textarea>
+        <mat-icon matSuffix>question_answer</mat-icon>
+        <mat-hint>Question should be between 4 and 200 symbols</mat-hint>
+        <mat-error *ngIf="postQuestionForm.get('text').hasError('required')">Question field is required!</mat-error>
+        <mat-error *ngIf="postQuestionForm.get('text').hasError('minlength')">Minimum length is 4 symbols!</mat-error>
+        <mat-error *ngIf="postQuestionForm.get('text').hasError('maxlength')">Maximum length is 200 symbols!</mat-error>
     </mat-form-field>
+    <button [disabled]="postQuestionForm.invalid" color="primary" mat-fab type="submit">Ask</button>
 </form>

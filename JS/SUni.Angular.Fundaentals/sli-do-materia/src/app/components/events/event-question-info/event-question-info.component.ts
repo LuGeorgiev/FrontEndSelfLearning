@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventQuestionInfoComponent implements OnInit {
 
+  currentDate = new Date();
   constructor() { }
 
   ngOnInit() {
