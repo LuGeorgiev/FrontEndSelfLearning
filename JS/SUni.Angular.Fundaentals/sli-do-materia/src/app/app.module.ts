@@ -4,6 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms'
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EventLiveComponent } from './components/events/event-live/event-live.component';
 import { EventPostQuestionComponent } from './components/events/event-post-question/event-post-question.component';
 import { EventQuestionInfoComponent } from './components/events/event-question-info/event-question-info.component';
-import { MyFirebaseModule } from './firebase.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { MyFirebaseModule } from './firebase.module';
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MyFirebaseModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
