@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { EventService } from 'src/app/core/services/events.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   eventForm:FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private eventService: EventService) { }
 
   ngOnInit() {
     this.eventForm = this.fb.group({
@@ -18,4 +19,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  displayLiveEvent(){
+    const code = this.eventForm.value.code;
+
+    this.eventService.fetxhEventByCode(code);
+  }
 }

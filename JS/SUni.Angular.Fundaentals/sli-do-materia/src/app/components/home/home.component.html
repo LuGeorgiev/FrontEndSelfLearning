@@ -3,7 +3,7 @@
         <h1>Every Question Mattres</h1>
         <p>Wellcome to sli.do. Please, enter an event code.</p>
     </div>
-    <form [formGroup]="eventForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <form (ngSubmit)="displayLiveEvent()" [formGroup]="eventForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
         <mat-form-field>
             <mat-icon matPrefix>event</mat-icon>
             <input 
