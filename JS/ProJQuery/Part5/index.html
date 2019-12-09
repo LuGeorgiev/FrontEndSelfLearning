@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+    <script
+      src="../Part2/jquery/jquery-3.4.1.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var jq1 = $("img:odd");
+        console.log(jq1);
+        console.log(this);
+
+        $("img:odd", $(".drow")) //.drow selector gives context of the selection
+          .mouseenter(function(e) {
+            console.log(e);
+            console.log(this);
+            $(this).css("opacity", 0.5);
+          })
+          .mouseout(function(e) {
+            $(this).css("opacity", 1.0);
+          });
+
+        var elems = $("img:even");
+        for (var i = 0; i < elems.length; i++) {
+          console.log("Element: " + elems[i].tagName + " " + elems[i].src);
+        }
+
+        $("img:odd").each(function(index, elem) {
+          console.log("Element: " + elem.tagName + " " + elem.src);
+        });
+
+        const labelEmes = document.getElementsByTagName("label");
+        for (const iterator of labelEmes) {
+            iterator.style.color = "blue";
+        }
+
+        $("label:nth(2)")
+        .css("color", "pink")
+        .css("font-size", "1.5em");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Jacqui's Flower Shop</h1>
+    <form method="post">
+      <div id="oblock">
+        <div class="dtable">
+          <div id="row1" class="drow">
+            <div class="dcell">
+              <img src="../Part2/images/aster.png" /><label for="aster"
+                >Aster:</label
+              >
+              <input name="aster" value="0" required />
+            </div>
+            <div class="dcell">
+              <img src="../Part2/images/daffodil.png" /><label for="daffodil"
+                >Daffodil:</label
+              >
+              <input name="daffodil" value="0" required />
+            </div>
+            <div class="dcell">
+              <img src="../Part2/images/rose.png" /><label for="rose"
+                >Rose:</label
+              >
+              <input name="rose" value="0" required />
+            </div>
+          </div>
+          <div id="row2" class="drow">
+            <div class="dcell">
+              <img src="../Part2/images/peony.png" /><label for="peony"
+                >Peony:</label
+              >
+              <input name="peony" value="0" required />
+            </div>
+            <div class="dcell">
+              <img src="../Part2/images/primula.png" /><label for="primula"
+                >Primula:</label
+              >
+              <input name="primula" value="0" required />
+            </div>
+            <div class="dcell">
+              <img src="../Part2/images/snowdrop.png" /><label for="snowdrop"
+                >Snowdrop:</label
+              >
+              <input name="snowdrop" value="0" required />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="buttonDiv"><button type="submit">Place Order</button></div>
+    </form>
+  </body>
+</html>
