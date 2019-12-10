@@ -32,10 +32,64 @@
         //   })
         //   .css("border", "thick solid blue");
 
-        $("div.dcell")
-          .children("img")
-          .addBack()
-          .css("border", "thick solid purple");
+        //6-10
+        // $("div.dcell")
+        //   .children("img")
+        //   .addBack()
+        //   .css("border", "thick solid purple");
+
+        //6-11
+        // const childCount = $("div.drow")
+        //   .children()
+        //   .each(function(ind, elem) {
+        //     console.log(`Child: ${elem.tagName} ${elem.className}`);
+        //   });
+        //   console.log("There are " + childCount.length + " children");
+
+        //   const descCount = $("div.drow")
+        //   .find("img")
+        //   .each(function(ind, elem){
+        //     console.log(`Descendat: ${elem.tagName} ${elem.src}`);
+        //   });
+        //   console.log("There are " + descCount.length + " img descendants");
+
+        //6-14
+        // $("div.dcell").parent()
+        // .each(function(i,e){
+        //   console.log(`Element: ${e.tagName} ${e.id}`);
+        // });
+        // $("div.dcell").parent("#row1")
+        // .each(function(i,e){
+        //   console.log(`Element: ${e.tagName} ${e.id}`);
+        // });
+
+        //6-15
+        // $("img[src*=peony], img[src*=rose]")
+        // .parents()
+        // .each((i,e)=>{
+        //   console.log(`Element: ${e.tagName} ${e.className} ${e.id}`);
+        // });
+
+        //6-16/17
+        // $("img[src*=peony], img[src*=rose]")
+        // .parentsUntil("form", ":not(.dcell)")
+        // .each((i,e)=>{
+        //   console.log(`Element: ${e.tagName} ${e.className} ${e.id}`);
+        // });
+
+        //6-19
+        // const jq = $("#row1, #row2, form");
+        // $("img[src*=rose]")
+        // .closest(jq)
+        // .each((i,e)=>{
+        //   console.log(`Element: ${e.tagName} ${e.className} ${e.id}`);
+        // });
+
+        //6-21
+        $("img[src*=aster], img[src*=primula]")
+          .parent()
+          .siblings()
+          .css("border", "thick solid blue");
       });
     </script>
   </head>
