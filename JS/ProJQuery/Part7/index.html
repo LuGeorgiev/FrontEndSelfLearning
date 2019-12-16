@@ -66,8 +66,57 @@
         // });
 
         //7-11
-        const newElem = $("<div/>").css("border", "thick solid red");
-        $("div.drow").wrap(newElem);
+        // const newElem = $("<div/>").css("border", "thick solid red");
+        // $("div.drow").wrap(newElem);
+
+        //7-16
+        // const orchidElements = $("<div class='dcell'/>")
+        //   .append("<img src='../Part2/images/orchid.png'>")
+        //   .append("<label for='orchid'>Orchid:</label>")
+        //   .append("<input name='orchid' value='0' required />");
+
+        // const lilyElements = $("<div class='dcell'/>")
+        //   .append("<img src='../Part2/images/lily.png'>")
+        //   .append("<label for='lily'>Lily:</label>")
+        //   .append("<input name='lily' value='0' required />");
+
+        // $(orchidElements)
+        //   .add(lilyElements)
+        //   .css("border", "thick solid red");
+        // $("#row1 div.dcell").after(orchidElements);
+        // $("#row2 div.dcell").before(lilyElements);
+
+        //7-18
+        // $("#row1 div.dcell").after(function(ind, html) {
+        //   if (ind === 0) {
+        //     return $("<div class='dcell'/>")
+        //       .append("<img src='../Part2/images/lily.png'>")
+        //       .append("<label for='orchid'>Orchid:</label>")
+        //       .append("<input name='orchid' value='0' required />")
+        //       .css("border", "thick solid red");
+        //   } else if (ind === 1) {
+        //     return $("<div class='dcell'/>")
+        //       .append("<img src='../Part2/images/orchid.png'>")
+        //       .append("<label for='lily'>Lily:</label>")
+        //       .append("<input name='lily' value='0' required />")
+        //       .css("border", "thick solid red");
+        //   }
+        // });
+
+        //7-19
+        // var newElements = $("<div class='dcell'/>")
+        //   .append("<img src='../Part2/images/lily.png'>")
+        //   .append("<label for='orchid'>Orchid:</label>")
+        //   .append("<input name='orchid' value='0' required />")
+        //   .css("border", "thick solid red");
+        // $("#row1")
+        //   .children()
+        //   .first()
+        //   .replaceWith(newElements);
+
+        //7-23
+        $("#row2").append($("img[src*=aster]").parent().detach());
+
       });
     </script>
   </head>
